@@ -24,6 +24,46 @@ export const __jscodeshiftPlaceholder__ = `{
  */
 export class DirectionsRenderer extends React.PureComponent {
   static propTypes = {
+    /**
+     * @type DirectionsResult
+     */
+    defaultDirections: _propTypes2.default.any,
+
+    /**
+     * @type DirectionsRendererOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type Node
+     */
+    defaultPanel: _propTypes2.default.any,
+
+    /**
+     * @type number
+     */
+    defaultRouteIndex: _propTypes2.default.number,
+
+    /**
+     * @type DirectionsResult
+     */
+    directions: _propTypes2.default.any,
+
+    /**
+     * @type DirectionsRendererOptions
+     */
+    options: _propTypes2.default.any,
+
+    /**
+     * @type Node
+     */
+    panel: _propTypes2.default.any,
+
+    /**
+     * @type number
+     */
+    routeIndex: _propTypes2.default.number,
+
     __jscodeshiftPlaceholder__: null,
   }
 
@@ -74,10 +114,52 @@ export class DirectionsRenderer extends React.PureComponent {
   render() {
     return false
   }
+
+  /**
+   * Returns the renderer's current set of directions.
+   * @type DirectionsResult
+   * @public
+   */
+  getDirections() {
+    return this.state[_constants.DIRECTIONS_RENDERER].getDirections()
+  }
+
+  /**
+   * Returns the panel `<div>` in which the `DirectionsResult` is rendered.
+   * @type Node<div>DirectionsResult
+   * @public
+   */
+  getPanel() {
+    return this.state[_constants.DIRECTIONS_RENDERER].getPanel()
+  }
+
+  /**
+   * Returns the current (zero-based) route index in use by this `DirectionsRenderer` object.
+   * @type numberDirectionsRenderer
+   * @public
+   */
+  getRouteIndex() {
+    return this.state[_constants.DIRECTIONS_RENDERER].getRouteIndex()
+  }
 }
 
 export default DirectionsRenderer
 
-const eventMap = {}
+const eventMap = {
+  onDirectionsChanged: "directions_changed",
+}
 
-const updaterMap = {}
+const updaterMap = {
+  directions: function directions(instance, _directions) {
+    instance.setDirections(_directions)
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+  panel: function panel(instance, _panel) {
+    instance.setPanel(_panel)
+  },
+  routeIndex: function routeIndex(instance, _routeIndex) {
+    instance.setRouteIndex(_routeIndex)
+  },
+}

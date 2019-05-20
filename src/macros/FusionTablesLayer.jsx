@@ -24,6 +24,16 @@ export const __jscodeshiftPlaceholder__ = `{
  */
 export class FusionTablesLayer extends React.PureComponent {
   static propTypes = {
+    /**
+     * @type FusionTablesLayerOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type FusionTablesLayerOptions
+     */
+    options: _propTypes2.default.any,
+
     __jscodeshiftPlaceholder__: null,
   }
 
@@ -78,6 +88,12 @@ export class FusionTablesLayer extends React.PureComponent {
 
 export default FusionTablesLayer
 
-const eventMap = {}
+const eventMap = {
+  onClick: "click",
+}
 
-const updaterMap = {}
+const updaterMap = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+}

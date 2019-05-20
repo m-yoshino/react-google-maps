@@ -25,6 +25,56 @@ import { MAP, POLYLINE } from "../constants"
 export class Polyline extends React.PureComponent {
   static propTypes = {
     /**
+     * @type boolean
+     */
+    defaultDraggable: _propTypes2.default.bool,
+
+    /**
+     * @type boolean
+     */
+    defaultEditable: _propTypes2.default.bool,
+
+    /**
+     * @type PolylineOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
+     */
+    defaultPath: _propTypes2.default.any,
+
+    /**
+     * @type boolean
+     */
+    defaultVisible: _propTypes2.default.bool,
+
+    /**
+     * @type boolean
+     */
+    draggable: _propTypes2.default.bool,
+
+    /**
+     * @type boolean
+     */
+    editable: _propTypes2.default.bool,
+
+    /**
+     * @type PolylineOptions
+     */
+    options: _propTypes2.default.any,
+
+    /**
+     * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
+     */
+    path: _propTypes2.default.any,
+
+    /**
+     * @type boolean
+     */
+    visible: _propTypes2.default.bool,
+
+    /**
      * function
      */
     onDblClick: PropTypes.func,
@@ -112,6 +162,42 @@ export class Polyline extends React.PureComponent {
   render() {
     return false
   }
+
+  /**
+   * Returns whether this shape can be dragged by the user.
+   * @type boolean
+   * @public
+   */
+  getDraggable() {
+    return this.state[_constants.POLYLINE].getDraggable()
+  }
+
+  /**
+   * Returns whether this shape can be edited by the user.
+   * @type boolean
+   * @public
+   */
+  getEditable() {
+    return this.state[_constants.POLYLINE].getEditable()
+  }
+
+  /**
+   * Retrieves the path.
+   * @type MVCArray<LatLng>
+   * @public
+   */
+  getPath() {
+    return this.state[_constants.POLYLINE].getPath()
+  }
+
+  /**
+   * Returns whether this poly is visible on the map.
+   * @type boolean
+   * @public
+   */
+  getVisible() {
+    return this.state[_constants.POLYLINE].getVisible()
+  }
 }
 
 export default Polyline
@@ -126,6 +212,33 @@ const eventMap = {
   onMouseOver: "mouseover",
   onMouseUp: "mouseup",
   onRightClick: "rightclick",
+  onClick: "click",
+  onDrag: "drag",
+  onDblClick: "dblclick",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMouseDown: "mousedown",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onRightClick: "rightclick",
 }
 
-const updaterMap = {}
+const updaterMap = {
+  draggable: function draggable(instance, _draggable) {
+    instance.setDraggable(_draggable)
+  },
+  editable: function editable(instance, _editable) {
+    instance.setEditable(_editable)
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+  path: function path(instance, _path) {
+    instance.setPath(_path)
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible)
+  },
+}

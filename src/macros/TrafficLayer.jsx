@@ -25,6 +25,16 @@ export const __jscodeshiftPlaceholder__ = `{
 export class TrafficLayer extends React.PureComponent {
   static propTypes = {
     __jscodeshiftPlaceholder__: null,
+
+    /**
+     * @type TrafficLayerOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type TrafficLayerOptions
+     */
+    options: _propTypes2.default.any,
   }
 
   static contextTypes = {
@@ -75,4 +85,8 @@ export default TrafficLayer
 
 const eventMap = {}
 
-const updaterMap = {}
+const updaterMap = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+}

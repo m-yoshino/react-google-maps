@@ -25,6 +25,56 @@ import { MAP, RECTANGLE } from "../constants"
 export class Rectangle extends React.PureComponent {
   static propTypes = {
     /**
+     * @type LatLngBounds|LatLngBoundsLiteral
+     */
+    defaultBounds: _propTypes2.default.any,
+
+    /**
+     * @type boolean
+     */
+    defaultDraggable: _propTypes2.default.bool,
+
+    /**
+     * @type boolean
+     */
+    defaultEditable: _propTypes2.default.bool,
+
+    /**
+     * @type RectangleOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type boolean
+     */
+    defaultVisible: _propTypes2.default.bool,
+
+    /**
+     * @type LatLngBounds|LatLngBoundsLiteral
+     */
+    bounds: _propTypes2.default.any,
+
+    /**
+     * @type boolean
+     */
+    draggable: _propTypes2.default.bool,
+
+    /**
+     * @type boolean
+     */
+    editable: _propTypes2.default.bool,
+
+    /**
+     * @type RectangleOptions
+     */
+    options: _propTypes2.default.any,
+
+    /**
+     * @type boolean
+     */
+    visible: _propTypes2.default.bool,
+
+    /**
      * function
      */
     onDblClick: PropTypes.func,
@@ -112,6 +162,42 @@ export class Rectangle extends React.PureComponent {
   render() {
     return false
   }
+
+  /**
+   * Returns the bounds of this rectangle.
+   * @type LatLngBounds
+   * @public
+   */
+  getBounds() {
+    return this.state[_constants.RECTANGLE].getBounds()
+  }
+
+  /**
+   * Returns whether this rectangle can be dragged by the user.
+   * @type boolean
+   * @public
+   */
+  getDraggable() {
+    return this.state[_constants.RECTANGLE].getDraggable()
+  }
+
+  /**
+   * Returns whether this rectangle can be edited by the user.
+   * @type boolean
+   * @public
+   */
+  getEditable() {
+    return this.state[_constants.RECTANGLE].getEditable()
+  }
+
+  /**
+   * Returns whether this rectangle is visible on the map.
+   * @type boolean
+   * @public
+   */
+  getVisible() {
+    return this.state[_constants.RECTANGLE].getVisible()
+  }
 }
 
 export default Rectangle
@@ -126,6 +212,34 @@ const eventMap = {
   onMouseOver: "mouseover",
   onMouseUp: "mouseup",
   onRightClick: "rightclick",
+  onBoundsChanged: "bounds_changed",
+  onClick: "click",
+  onDrag: "drag",
+  onDblClick: "dblclick",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMouseDown: "mousedown",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onRightClick: "rightclick",
 }
 
-const updaterMap = {}
+const updaterMap = {
+  bounds: function bounds(instance, _bounds) {
+    instance.setBounds(_bounds)
+  },
+  draggable: function draggable(instance, _draggable) {
+    instance.setDraggable(_draggable)
+  },
+  editable: function editable(instance, _editable) {
+    instance.setEditable(_editable)
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible)
+  },
+}

@@ -29,6 +29,16 @@ class SearchBox extends React.PureComponent {
 
   static propTypes = {
     __jscodeshiftPlaceholder__: null,
+
+    /**
+     * @type LatLngBounds|LatLngBoundsLiteral
+     */
+    defaultBounds: _propTypes2.default.any,
+
+    /**
+     * @type LatLngBounds|LatLngBoundsLiteral
+     */
+    bounds: _propTypes2.default.any,
   }
 
   state = {
@@ -45,7 +55,7 @@ class SearchBox extends React.PureComponent {
      * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#SearchBox
      */
     const searchBox = new google.maps.places.SearchBox(
-      element.querySelector('input') || element
+      element.querySelector("input") || element
     )
     construct(SearchBox.propTypes, updaterMap, this.props, searchBox)
 
@@ -72,12 +82,36 @@ class SearchBox extends React.PureComponent {
   render() {
     return React.Children.only(this.props.children)
   }
+
+  /**
+   * Returns the bounds to which query predictions are biased.
+   * @type LatLngBounds
+   * @public
+   */
+  getBounds() {
+    return this.state[_constants.SEARCH_BOX].getBounds()
+  }
+
+  /**
+   * Returns the query selected by the user, or `null` if no places have been found yet, to be used with `places_changed` event.
+   * @type Array<PlaceResult>nullplaces_changed
+   * @public
+   */
+  getPlaces() {
+    return this.state[_constants.SEARCH_BOX].getPlaces()
+  }
 }
 
 export const StandaloneSearchBox = SearchBox
 
 export default StandaloneSearchBox
 
-const eventMap = {}
+const eventMap = {
+  onPlacesChanged: "places_changed",
+}
 
-const updaterMap = {}
+const updaterMap = {
+  bounds: function bounds(instance, _bounds) {
+    instance.setBounds(_bounds)
+  },
+}

@@ -28,6 +28,36 @@ import { MAP, ANCHOR, INFO_WINDOW } from "../constants"
 export class InfoWindow extends React.PureComponent {
   static propTypes = {
     /**
+     * @type InfoWindowOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type LatLng|LatLngLiteral
+     */
+    defaultPosition: _propTypes2.default.any,
+
+    /**
+     * @type number
+     */
+    defaultZIndex: _propTypes2.default.number,
+
+    /**
+     * @type InfoWindowOptions
+     */
+    options: _propTypes2.default.any,
+
+    /**
+     * @type LatLng|LatLngLiteral
+     */
+    position: _propTypes2.default.any,
+
+    /**
+     * @type number
+     */
+    zIndex: _propTypes2.default.number,
+
+    /**
      * function
      */
     onCloseClick: PropTypes.func,
@@ -122,6 +152,24 @@ export class InfoWindow extends React.PureComponent {
     }
     return false
   }
+
+  /**
+   *
+   * @type LatLng
+   * @public
+   */
+  getPosition() {
+    return this.state[_constants.INFO_WINDOW].getPosition()
+  }
+
+  /**
+   *
+   * @type number
+   * @public
+   */
+  getZIndex() {
+    return this.state[_constants.INFO_WINDOW].getZIndex()
+  }
 }
 
 export default InfoWindow
@@ -142,6 +190,21 @@ const open = (infoWindow, anchor) => {
 const eventMap = {
   onCloseClick: "closeclick",
   onDomReady: "domready",
+  onContentChanged: "content_changed",
+  onPositionChanged: "position_changed",
+  onZindexChanged: "zindex_changed",
+  onCloseClick: "closeclick",
+  onDomReady: "domready",
 }
 
-const updaterMap = {}
+const updaterMap = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+  position: function position(instance, _position) {
+    instance.setPosition(_position)
+  },
+  zIndex: function zIndex(instance, _zIndex) {
+    instance.setZIndex(_zIndex)
+  },
+}

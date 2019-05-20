@@ -48,6 +48,16 @@ export class GroundOverlay extends React.PureComponent {
      * @deprecated use `defaultBounds` instead. It will be removed in v10.0.0
      */
     bounds: PropTypes.object,
+
+    /**
+     * @type number
+     */
+    defaultOpacity: _propTypes2.default.number,
+
+    /**
+     * @type number
+     */
+    opacity: _propTypes2.default.number,
   }
 
   static contextTypes = {
@@ -110,10 +120,44 @@ For GroundOveray, url and bounds are passed in to constructor and are immutable
   render() {
     return false
   }
+
+  /**
+   * Gets the `LatLngBounds` of this overlay.
+   * @type LatLngBoundsLatLngBounds
+   * @public
+   */
+  getBounds() {
+    return this.state[_constants.GROUND_LAYER].getBounds()
+  }
+
+  /**
+   * Returns the opacity of this ground overlay.
+   * @type number
+   * @public
+   */
+  getOpacity() {
+    return this.state[_constants.GROUND_LAYER].getOpacity()
+  }
+
+  /**
+   * Gets the url of the projected image.
+   * @type string
+   * @public
+   */
+  getUrl() {
+    return this.state[_constants.GROUND_LAYER].getUrl()
+  }
 }
 
 export default GroundOverlay
 
-const eventMap = {}
+const eventMap = {
+  onDblClick: "dblclick",
+  onClick: "click",
+}
 
-const updaterMap = {}
+const updaterMap = {
+  opacity: function opacity(instance, _opacity) {
+    instance.setOpacity(_opacity)
+  },
+}

@@ -32,6 +32,26 @@ export const __jscodeshiftPlaceholder__ = `{
 export class DrawingManager extends React.PureComponent {
   static propTypes = {
     __jscodeshiftPlaceholder__: null,
+
+    /**
+     * @type OverlayType
+     */
+    defaultDrawingMode: _propTypes2.default.any,
+
+    /**
+     * @type DrawingManagerOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type OverlayType
+     */
+    drawingMode: _propTypes2.default.any,
+
+    /**
+     * @type DrawingManagerOptions
+     */
+    options: _propTypes2.default.any,
   }
 
   static contextTypes = {
@@ -80,10 +100,33 @@ export class DrawingManager extends React.PureComponent {
   render() {
     return false
   }
+
+  /**
+   * Returns the `DrawingManager`'s drawing mode.
+   * @type OverlayTypeDrawingManager
+   * @public
+   */
+  getDrawingMode() {
+    return this.state[_constants.DRAWING_MANAGER].getDrawingMode()
+  }
 }
 
 export default DrawingManager
 
-const eventMap = {}
+const eventMap = {
+  onCircleComplete: "circlecomplete",
+  onMarkerComplete: "markercomplete",
+  onOverlayComplete: "overlaycomplete",
+  onPolygonComplete: "polygoncomplete",
+  onPolylineComplete: "polylinecomplete",
+  onRectangleComplete: "rectanglecomplete",
+}
 
-const updaterMap = {}
+const updaterMap = {
+  drawingMode: function drawingMode(instance, _drawingMode) {
+    instance.setDrawingMode(_drawingMode)
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+}

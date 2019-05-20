@@ -24,7 +24,27 @@ import { MAP, HEATMAP_LAYER } from "../../constants"
  * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#HeatmapLayer
  */
 export class HeatmapLayer extends React.PureComponent {
-  static propTypes = {}
+  static propTypes = {
+    /**
+     * @type MVCArray<LatLng|WeightedLocation>|Array<LatLng|WeightedLocation>
+     */
+    defaultData: _propTypes2.default.any,
+
+    /**
+     * @type HeatmapLayerOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type MVCArray<LatLng|WeightedLocation>|Array<LatLng|WeightedLocation>
+     */
+    data: _propTypes2.default.any,
+
+    /**
+     * @type HeatmapLayerOptions
+     */
+    options: _propTypes2.default.any,
+  }
 
   static contextTypes = {
     [MAP]: PropTypes.object,
@@ -72,10 +92,26 @@ export class HeatmapLayer extends React.PureComponent {
   render() {
     return false
   }
+
+  /**
+   * Returns the data points currently displayed by this heatmap.
+   * @type MVCArray<LatLng|WeightedLocation>
+   * @public
+   */
+  getData() {
+    return this.state[_constants.HEATMAP_LAYER].getData()
+  }
 }
 
 export default HeatmapLayer
 
 const eventMap = {}
 
-const updaterMap = {}
+const updaterMap = {
+  data: function data(instance, _data) {
+    instance.setData(_data)
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+}

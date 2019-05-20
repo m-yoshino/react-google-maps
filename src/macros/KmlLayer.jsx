@@ -26,6 +26,36 @@ export const __jscodeshiftPlaceholder__ = `{
 export class KmlLayer extends React.PureComponent {
   static propTypes = {
     __jscodeshiftPlaceholder__: null,
+
+    /**
+     * @type KmlLayerOptions
+     */
+    defaultOptions: _propTypes2.default.any,
+
+    /**
+     * @type string
+     */
+    defaultUrl: _propTypes2.default.string,
+
+    /**
+     * @type number
+     */
+    defaultZIndex: _propTypes2.default.number,
+
+    /**
+     * @type KmlLayerOptions
+     */
+    options: _propTypes2.default.any,
+
+    /**
+     * @type string
+     */
+    url: _propTypes2.default.string,
+
+    /**
+     * @type number
+     */
+    zIndex: _propTypes2.default.number,
   }
 
   static contextTypes = {
@@ -70,10 +100,69 @@ export class KmlLayer extends React.PureComponent {
   render() {
     return false
   }
+
+  /**
+   * Get the default viewport for the layer being displayed.
+   * @type LatLngBounds
+   * @public
+   */
+  getDefaultViewport() {
+    return this.state[_constants.KML_LAYER].getDefaultViewport()
+  }
+
+  /**
+   * Get the metadata associated with this layer, as specified in the layer markup.
+   * @type KmlLayerMetadata
+   * @public
+   */
+  getMetadata() {
+    return this.state[_constants.KML_LAYER].getMetadata()
+  }
+
+  /**
+   * Get the status of the layer, set once the requested document has loaded.
+   * @type KmlLayerStatus
+   * @public
+   */
+  getStatus() {
+    return this.state[_constants.KML_LAYER].getStatus()
+  }
+
+  /**
+   * Gets the URL of the KML file being displayed.
+   * @type string
+   * @public
+   */
+  getUrl() {
+    return this.state[_constants.KML_LAYER].getUrl()
+  }
+
+  /**
+   * Gets the z-index of the KML Layer.
+   * @type number
+   * @public
+   */
+  getZIndex() {
+    return this.state[_constants.KML_LAYER].getZIndex()
+  }
 }
 
 export default KmlLayer
 
-const eventMap = {}
+const eventMap = {
+  onDefaultViewportChanged: "defaultviewport_changed",
+  onClick: "click",
+  onStatusChanged: "status_changed",
+}
 
-const updaterMap = {}
+const updaterMap = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options)
+  },
+  url: function url(instance, _url) {
+    instance.setUrl(_url)
+  },
+  zIndex: function zIndex(instance, _zIndex) {
+    instance.setZIndex(_zIndex)
+  },
+}

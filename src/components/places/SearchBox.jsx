@@ -35,6 +35,16 @@ export class SearchBox extends React.PureComponent {
      * @type number
      */
     controlPosition: PropTypes.number,
+
+    /**
+     * @type LatLngBounds|LatLngBoundsLiteral
+     */
+    defaultBounds: _propTypes2.default.any,
+
+    /**
+     * @type LatLngBounds|LatLngBoundsLiteral
+     */
+    bounds: _propTypes2.default.any,
   }
 
   static contextTypes = {
@@ -159,12 +169,36 @@ export class SearchBox extends React.PureComponent {
     }
     return false
   }
+
+  /**
+   * Returns the bounds to which query predictions are biased.
+   * @type LatLngBounds
+   * @public
+   */
+  getBounds() {
+    return this.state[_constants.SEARCH_BOX].getBounds()
+  }
+
+  /**
+   * Returns the query selected by the user, or `null` if no places have been found yet, to be used with `places_changed` event.
+   * @type Array<PlaceResult>nullplaces_changed
+   * @public
+   */
+  getPlaces() {
+    return this.state[_constants.SEARCH_BOX].getPlaces()
+  }
 }
 
 export default SearchBox
 
 const isValidControlPosition = _.isNumber
 
-const eventMap = {}
+const eventMap = {
+  onPlacesChanged: "places_changed",
+}
 
-const updaterMap = {}
+const updaterMap = {
+  bounds: function bounds(instance, _bounds) {
+    instance.setBounds(_bounds)
+  },
+}
