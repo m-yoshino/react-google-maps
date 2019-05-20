@@ -27,12 +27,12 @@ export class TrafficLayer extends React.PureComponent {
     /**
      * @type TrafficLayerOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type TrafficLayerOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
   }
 
   static contextTypes = {
@@ -84,7 +84,7 @@ export default TrafficLayer
 const eventMap = {}
 
 const updaterMap = {
-  options: function options(instance, _options) {
+  options(instance, _options) {
     instance.setOptions(_options)
   },
 }

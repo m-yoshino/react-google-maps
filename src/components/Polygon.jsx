@@ -27,62 +27,62 @@ export class Polygon extends React.PureComponent {
     /**
      * @type boolean
      */
-    defaultDraggable: _propTypes2.default.bool,
+    defaultDraggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    defaultEditable: _propTypes2.default.bool,
+    defaultEditable: PropTypes.bool,
 
     /**
      * @type PolygonOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
      */
-    defaultPath: _propTypes2.default.any,
+    defaultPath: PropTypes.any,
 
     /**
      * @type MVCArray<MVCArray<LatLng>>|MVCArray<LatLng>|Array<Array<LatLng|LatLngLiteral>>|Array<LatLng|LatLngLiteral>
      */
-    defaultPaths: _propTypes2.default.any,
+    defaultPaths: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultVisible: _propTypes2.default.bool,
+    defaultVisible: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    draggable: _propTypes2.default.bool,
+    draggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    editable: _propTypes2.default.bool,
+    editable: PropTypes.bool,
 
     /**
      * @type PolygonOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
      */
-    path: _propTypes2.default.any,
+    path: PropTypes.any,
 
     /**
      * @type MVCArray<MVCArray<LatLng>>|MVCArray<LatLng>|Array<Array<LatLng|LatLngLiteral>>|Array<LatLng|LatLngLiteral>
      */
-    paths: _propTypes2.default.any,
+    paths: PropTypes.any,
 
     /**
      * @type boolean
      */
-    visible: _propTypes2.default.bool,
+    visible: PropTypes.bool,
 
     /**
      * function
@@ -128,6 +128,16 @@ export class Polygon extends React.PureComponent {
      * function
      */
     onRightClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onDrag: PropTypes.func,
   }
 
   static contextTypes = {
@@ -179,7 +189,7 @@ export class Polygon extends React.PureComponent {
    * @public
    */
   getDraggable() {
-    return this.state[_constants.POLYGON].getDraggable()
+    return this.state[POLYGON].getDraggable()
   }
 
   /**
@@ -188,7 +198,7 @@ export class Polygon extends React.PureComponent {
    * @public
    */
   getEditable() {
-    return this.state[_constants.POLYGON].getEditable()
+    return this.state[POLYGON].getEditable()
   }
 
   /**
@@ -197,7 +207,7 @@ export class Polygon extends React.PureComponent {
    * @public
    */
   getPath() {
-    return this.state[_constants.POLYGON].getPath()
+    return this.state[POLYGON].getPath()
   }
 
   /**
@@ -206,7 +216,7 @@ export class Polygon extends React.PureComponent {
    * @public
    */
   getPaths() {
-    return this.state[_constants.POLYGON].getPaths()
+    return this.state[POLYGON].getPaths()
   }
 
   /**
@@ -215,7 +225,7 @@ export class Polygon extends React.PureComponent {
    * @public
    */
   getVisible() {
-    return this.state[_constants.POLYGON].getVisible()
+    return this.state[POLYGON].getVisible()
   }
 }
 
@@ -233,34 +243,30 @@ const eventMap = {
   onRightClick: "rightclick",
   onClick: "click",
   onDrag: "drag",
-  onDblClick: "dblclick",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick",
 }
 
 const updaterMap = {
-  draggable: function draggable(instance, _draggable) {
+  draggable(instance, _draggable) {
     instance.setDraggable(_draggable)
   },
-  editable: function editable(instance, _editable) {
+
+  editable(instance, _editable) {
     instance.setEditable(_editable)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  path: function path(instance, _path) {
+
+  path(instance, _path) {
     instance.setPath(_path)
   },
-  paths: function paths(instance, _paths) {
+
+  paths(instance, _paths) {
     instance.setPaths(_paths)
   },
-  visible: function visible(instance, _visible) {
+
+  visible(instance, _visible) {
     instance.setVisible(_visible)
   },
 }

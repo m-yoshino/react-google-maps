@@ -27,52 +27,52 @@ export class Polyline extends React.PureComponent {
     /**
      * @type boolean
      */
-    defaultDraggable: _propTypes2.default.bool,
+    defaultDraggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    defaultEditable: _propTypes2.default.bool,
+    defaultEditable: PropTypes.bool,
 
     /**
      * @type PolylineOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
      */
-    defaultPath: _propTypes2.default.any,
+    defaultPath: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultVisible: _propTypes2.default.bool,
+    defaultVisible: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    draggable: _propTypes2.default.bool,
+    draggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    editable: _propTypes2.default.bool,
+    editable: PropTypes.bool,
 
     /**
      * @type PolylineOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
      */
-    path: _propTypes2.default.any,
+    path: PropTypes.any,
 
     /**
      * @type boolean
      */
-    visible: _propTypes2.default.bool,
+    visible: PropTypes.bool,
 
     /**
      * function
@@ -118,6 +118,16 @@ export class Polyline extends React.PureComponent {
      * function
      */
     onRightClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onDrag: PropTypes.func,
   }
 
   static contextTypes = {
@@ -169,7 +179,7 @@ export class Polyline extends React.PureComponent {
    * @public
    */
   getDraggable() {
-    return this.state[_constants.POLYLINE].getDraggable()
+    return this.state[POLYLINE].getDraggable()
   }
 
   /**
@@ -178,7 +188,7 @@ export class Polyline extends React.PureComponent {
    * @public
    */
   getEditable() {
-    return this.state[_constants.POLYLINE].getEditable()
+    return this.state[POLYLINE].getEditable()
   }
 
   /**
@@ -187,7 +197,7 @@ export class Polyline extends React.PureComponent {
    * @public
    */
   getPath() {
-    return this.state[_constants.POLYLINE].getPath()
+    return this.state[POLYLINE].getPath()
   }
 
   /**
@@ -196,7 +206,7 @@ export class Polyline extends React.PureComponent {
    * @public
    */
   getVisible() {
-    return this.state[_constants.POLYLINE].getVisible()
+    return this.state[POLYLINE].getVisible()
   }
 }
 
@@ -214,31 +224,26 @@ const eventMap = {
   onRightClick: "rightclick",
   onClick: "click",
   onDrag: "drag",
-  onDblClick: "dblclick",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick",
 }
 
 const updaterMap = {
-  draggable: function draggable(instance, _draggable) {
+  draggable(instance, _draggable) {
     instance.setDraggable(_draggable)
   },
-  editable: function editable(instance, _editable) {
+
+  editable(instance, _editable) {
     instance.setEditable(_editable)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  path: function path(instance, _path) {
+
+  path(instance, _path) {
     instance.setPath(_path)
   },
-  visible: function visible(instance, _visible) {
+
+  visible(instance, _visible) {
     instance.setVisible(_visible)
   },
 }

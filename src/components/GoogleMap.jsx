@@ -27,90 +27,90 @@ export class Map extends React.PureComponent {
 
   static propTypes = {
     /**
-     * @type LatLng|LatLngLiteral
-     */
-    defaultCenter: _propTypes2.default.any,
-
-    /**
-     * @type boolean
-     */
-    defaultClickableIcons: _propTypes2.default.bool,
-
-    /**
-     * @type number
-     */
-    defaultHeading: _propTypes2.default.number,
-
-    /**
-     * @type MapTypeId|string
-     */
-    defaultMapTypeId: _propTypes2.default.any,
-
-    /**
-     * @type MapOptions
-     */
-    defaultOptions: _propTypes2.default.any,
-
-    /**
-     * @type StreetViewPanorama
-     */
-    defaultStreetView: _propTypes2.default.any,
-
-    /**
-     * @type number
-     */
-    defaultTilt: _propTypes2.default.number,
-
-    /**
-     * @type number
-     */
-    defaultZoom: _propTypes2.default.number,
-
-    /**
-     * @type LatLng|LatLngLiteral
-     */
-    center: _propTypes2.default.any,
-
-    /**
-     * @type boolean
-     */
-    clickableIcons: _propTypes2.default.bool,
-
-    /**
-     * @type number
-     */
-    heading: _propTypes2.default.number,
-
-    /**
-     * @type MapTypeId|string
-     */
-    mapTypeId: _propTypes2.default.any,
-
-    /**
-     * @type MapOptions
-     */
-    options: _propTypes2.default.any,
-
-    /**
-     * @type StreetViewPanorama
-     */
-    streetView: _propTypes2.default.any,
-
-    /**
-     * @type number
-     */
-    tilt: _propTypes2.default.number,
-
-    /**
-     * @type number
-     */
-    zoom: _propTypes2.default.number,
-
-    /**
      * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapTypeRegistry
      * @type Array<[id:string, mapType:MapType|*]>
      */
     defaultExtraMapTypes: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.any)),
+
+    /**
+     * @type LatLng|LatLngLiteral
+     */
+    defaultCenter: PropTypes.any,
+
+    /**
+     * @type boolean
+     */
+    defaultClickableIcons: PropTypes.bool,
+
+    /**
+     * @type number
+     */
+    defaultHeading: PropTypes.number,
+
+    /**
+     * @type MapTypeId|string
+     */
+    defaultMapTypeId: PropTypes.any,
+
+    /**
+     * @type MapOptions
+     */
+    defaultOptions: PropTypes.any,
+
+    /**
+     * @type StreetViewPanorama
+     */
+    defaultStreetView: PropTypes.any,
+
+    /**
+     * @type number
+     */
+    defaultTilt: PropTypes.number,
+
+    /**
+     * @type number
+     */
+    defaultZoom: PropTypes.number,
+
+    /**
+     * @type LatLng|LatLngLiteral
+     */
+    center: PropTypes.any,
+
+    /**
+     * @type boolean
+     */
+    clickableIcons: PropTypes.bool,
+
+    /**
+     * @type number
+     */
+    heading: PropTypes.number,
+
+    /**
+     * @type MapTypeId|string
+     */
+    mapTypeId: PropTypes.any,
+
+    /**
+     * @type MapOptions
+     */
+    options: PropTypes.any,
+
+    /**
+     * @type StreetViewPanorama
+     */
+    streetView: PropTypes.any,
+
+    /**
+     * @type number
+     */
+    tilt: PropTypes.number,
+
+    /**
+     * @type number
+     */
+    zoom: PropTypes.number,
 
     /**
      * function
@@ -229,7 +229,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getBounds() {
-    return this.context[_constants.MAP].getBounds()
+    return this.context[MAP].getBounds()
   }
 
   /**
@@ -238,7 +238,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getCenter() {
-    return this.context[_constants.MAP].getCenter()
+    return this.context[MAP].getCenter()
   }
 
   /**
@@ -247,7 +247,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getClickableIcons() {
-    return this.context[_constants.MAP].getClickableIcons()
+    return this.context[MAP].getClickableIcons()
   }
 
   /**
@@ -256,7 +256,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getDiv() {
-    return this.context[_constants.MAP].getDiv()
+    return this.context[MAP].getDiv()
   }
 
   /**
@@ -265,7 +265,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getHeading() {
-    return this.context[_constants.MAP].getHeading()
+    return this.context[MAP].getHeading()
   }
 
   /**
@@ -274,7 +274,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getMapTypeId() {
-    return this.context[_constants.MAP].getMapTypeId()
+    return this.context[MAP].getMapTypeId()
   }
 
   /**
@@ -283,7 +283,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getProjection() {
-    return this.context[_constants.MAP].getProjection()
+    return this.context[MAP].getProjection()
   }
 
   /**
@@ -292,7 +292,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getStreetView() {
-    return this.context[_constants.MAP].getStreetView()
+    return this.context[MAP].getStreetView()
   }
 
   /**
@@ -301,7 +301,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getTilt() {
-    return this.context[_constants.MAP].getTilt()
+    return this.context[MAP].getTilt()
   }
 
   /**
@@ -310,7 +310,7 @@ export class Map extends React.PureComponent {
    * @public
    */
   getZoom() {
-    return this.context[_constants.MAP].getZoom()
+    return this.context[MAP].getZoom()
   }
 }
 
@@ -344,28 +344,36 @@ const updaterMap = {
   extraMapTypes(instance, extra) {
     extra.forEach(it => instance.mapTypes.set(...it))
   },
-  center: function center(instance, _center) {
+
+  center(instance, _center) {
     instance.setCenter(_center)
   },
-  clickableIcons: function clickableIcons(instance, _clickableIcons) {
+
+  clickableIcons(instance, _clickableIcons) {
     instance.setClickableIcons(_clickableIcons)
   },
-  heading: function heading(instance, _heading) {
+
+  heading(instance, _heading) {
     instance.setHeading(_heading)
   },
-  mapTypeId: function mapTypeId(instance, _mapTypeId) {
+
+  mapTypeId(instance, _mapTypeId) {
     instance.setMapTypeId(_mapTypeId)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  streetView: function streetView(instance, _streetView) {
+
+  streetView(instance, _streetView) {
     instance.setStreetView(_streetView)
   },
-  tilt: function tilt(instance, _tilt) {
+
+  tilt(instance, _tilt) {
     instance.setTilt(_tilt)
   },
-  zoom: function zoom(instance, _zoom) {
+
+  zoom(instance, _zoom) {
     instance.setZoom(_zoom)
   },
 }

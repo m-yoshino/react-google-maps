@@ -30,32 +30,32 @@ export class InfoWindow extends React.PureComponent {
     /**
      * @type InfoWindowOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type LatLng|LatLngLiteral
      */
-    defaultPosition: _propTypes2.default.any,
+    defaultPosition: PropTypes.any,
 
     /**
      * @type number
      */
-    defaultZIndex: _propTypes2.default.number,
+    defaultZIndex: PropTypes.number,
 
     /**
      * @type InfoWindowOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type LatLng|LatLngLiteral
      */
-    position: _propTypes2.default.any,
+    position: PropTypes.any,
 
     /**
      * @type number
      */
-    zIndex: _propTypes2.default.number,
+    zIndex: PropTypes.number,
 
     /**
      * function
@@ -66,6 +66,21 @@ export class InfoWindow extends React.PureComponent {
      * function
      */
     onDomReady: PropTypes.func,
+
+    /**
+     * function
+     */
+    onContentChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onPositionChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onZindexChanged: PropTypes.func,
   }
 
   static contextTypes = {
@@ -159,7 +174,7 @@ export class InfoWindow extends React.PureComponent {
    * @public
    */
   getPosition() {
-    return this.state[_constants.INFO_WINDOW].getPosition()
+    return this.state[INFO_WINDOW].getPosition()
   }
 
   /**
@@ -168,7 +183,7 @@ export class InfoWindow extends React.PureComponent {
    * @public
    */
   getZIndex() {
-    return this.state[_constants.INFO_WINDOW].getZIndex()
+    return this.state[INFO_WINDOW].getZIndex()
   }
 }
 
@@ -193,18 +208,18 @@ const eventMap = {
   onContentChanged: "content_changed",
   onPositionChanged: "position_changed",
   onZindexChanged: "zindex_changed",
-  onCloseClick: "closeclick",
-  onDomReady: "domready",
 }
 
 const updaterMap = {
-  options: function options(instance, _options) {
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  position: function position(instance, _position) {
+
+  position(instance, _position) {
     instance.setPosition(_position)
   },
-  zIndex: function zIndex(instance, _zIndex) {
+
+  zIndex(instance, _zIndex) {
     instance.setZIndex(_zIndex)
   },
 }

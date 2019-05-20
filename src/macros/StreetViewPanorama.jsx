@@ -13,7 +13,14 @@ import { MAP } from "../constants"
 
 export const __jscodeshiftPlaceholder__ = `{
   "eventMapOverrides": {
-    "onCloseClick": "closeclick"
+    "onCloseClick": "closeclick",
+    "onPanoChanged": "pano_changed",
+    "onPositionChanged": "position_changed",
+    "onPovChanged": "pov_changed",
+    "onResize": "resize",
+    "onStatusChanged": "status_changed",
+    "onVisibleChanged": "visible_changed",
+    "onZoomChanged": "zoom_changed"
   },
   "getInstanceFromComponent": "this.context[MAP]"
 }`
@@ -30,82 +37,82 @@ export class StreetViewPanorama extends React.PureComponent {
     /**
      * @type Array<StreetViewLink>
      */
-    defaultLinks: _propTypes2.default.any,
+    defaultLinks: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultMotionTracking: _propTypes2.default.bool,
+    defaultMotionTracking: PropTypes.bool,
 
     /**
      * @type StreetViewPanoramaOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type string
      */
-    defaultPano: _propTypes2.default.string,
+    defaultPano: PropTypes.string,
 
     /**
      * @type LatLng|LatLngLiteral
      */
-    defaultPosition: _propTypes2.default.any,
+    defaultPosition: PropTypes.any,
 
     /**
      * @type StreetViewPov
      */
-    defaultPov: _propTypes2.default.any,
+    defaultPov: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultVisible: _propTypes2.default.bool,
+    defaultVisible: PropTypes.bool,
 
     /**
      * @type number
      */
-    defaultZoom: _propTypes2.default.number,
+    defaultZoom: PropTypes.number,
 
     /**
      * @type Array<StreetViewLink>
      */
-    links: _propTypes2.default.any,
+    links: PropTypes.any,
 
     /**
      * @type boolean
      */
-    motionTracking: _propTypes2.default.bool,
+    motionTracking: PropTypes.bool,
 
     /**
      * @type StreetViewPanoramaOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type string
      */
-    pano: _propTypes2.default.string,
+    pano: PropTypes.string,
 
     /**
      * @type LatLng|LatLngLiteral
      */
-    position: _propTypes2.default.any,
+    position: PropTypes.any,
 
     /**
      * @type StreetViewPov
      */
-    pov: _propTypes2.default.any,
+    pov: PropTypes.any,
 
     /**
      * @type boolean
      */
-    visible: _propTypes2.default.bool,
+    visible: PropTypes.bool,
 
     /**
      * @type number
      */
-    zoom: _propTypes2.default.number,
+    zoom: PropTypes.number,
   }
 
   static contextTypes = {
@@ -169,7 +176,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getLinks() {
-    return this.context[_constants.MAP].getLinks()
+    return this.context[MAP].getLinks()
   }
 
   /**
@@ -178,7 +185,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getLocation() {
-    return this.context[_constants.MAP].getLocation()
+    return this.context[MAP].getLocation()
   }
 
   /**
@@ -187,7 +194,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getMotionTracking() {
-    return this.context[_constants.MAP].getMotionTracking()
+    return this.context[MAP].getMotionTracking()
   }
 
   /**
@@ -196,7 +203,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getPano() {
-    return this.context[_constants.MAP].getPano()
+    return this.context[MAP].getPano()
   }
 
   /**
@@ -205,7 +212,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getPhotographerPov() {
-    return this.context[_constants.MAP].getPhotographerPov()
+    return this.context[MAP].getPhotographerPov()
   }
 
   /**
@@ -214,7 +221,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getPosition() {
-    return this.context[_constants.MAP].getPosition()
+    return this.context[MAP].getPosition()
   }
 
   /**
@@ -223,7 +230,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getPov() {
-    return this.context[_constants.MAP].getPov()
+    return this.context[MAP].getPov()
   }
 
   /**
@@ -232,7 +239,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getStatus() {
-    return this.context[_constants.MAP].getStatus()
+    return this.context[MAP].getStatus()
   }
 
   /**
@@ -241,7 +248,7 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getVisible() {
-    return this.context[_constants.MAP].getVisible()
+    return this.context[MAP].getVisible()
   }
 
   /**
@@ -250,46 +257,44 @@ export class StreetViewPanorama extends React.PureComponent {
    * @public
    */
   getZoom() {
-    return this.context[_constants.MAP].getZoom()
+    return this.context[MAP].getZoom()
   }
 }
 
 export default StreetViewPanorama
 
-const eventMap = {
-  onCloseClick: "closeclick",
-  onPanoChanged: "pano_changed",
-  onPositionChanged: "position_changed",
-  onPovChanged: "pov_changed",
-  onResize: "resize",
-  onStatusChanged: "status_changed",
-  onVisibleChanged: "visible_changed",
-  onZoomChanged: "zoom_changed",
-}
+const eventMap = {}
 
 const updaterMap = {
-  links: function links(instance, _links) {
+  links(instance, _links) {
     instance.setLinks(_links)
   },
-  motionTracking: function motionTracking(instance, _motionTracking) {
+
+  motionTracking(instance, _motionTracking) {
     instance.setMotionTracking(_motionTracking)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  pano: function pano(instance, _pano) {
+
+  pano(instance, _pano) {
     instance.setPano(_pano)
   },
-  position: function position(instance, _position) {
+
+  position(instance, _position) {
     instance.setPosition(_position)
   },
-  pov: function pov(instance, _pov) {
+
+  pov(instance, _pov) {
     instance.setPov(_pov)
   },
-  visible: function visible(instance, _visible) {
+
+  visible(instance, _visible) {
     instance.setVisible(_visible)
   },
-  zoom: function zoom(instance, _zoom) {
+
+  zoom(instance, _zoom) {
     instance.setZoom(_zoom)
   },
 }

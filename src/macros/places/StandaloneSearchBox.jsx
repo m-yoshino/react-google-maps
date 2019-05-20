@@ -15,6 +15,7 @@ import { SEARCH_BOX } from "../../constants"
 
 export const __jscodeshiftPlaceholder__ = `{
   "eventMapOverrides": {
+    "onPlacesChanged": "places_changed"
   },
   "getInstanceFromComponent": "this.state[SEARCH_BOX]"
 }`
@@ -33,12 +34,12 @@ class SearchBox extends React.PureComponent {
     /**
      * @type LatLngBounds|LatLngBoundsLiteral
      */
-    defaultBounds: _propTypes2.default.any,
+    defaultBounds: PropTypes.any,
 
     /**
      * @type LatLngBounds|LatLngBoundsLiteral
      */
-    bounds: _propTypes2.default.any,
+    bounds: PropTypes.any,
   }
 
   state = {
@@ -89,7 +90,7 @@ class SearchBox extends React.PureComponent {
    * @public
    */
   getBounds() {
-    return this.state[_constants.SEARCH_BOX].getBounds()
+    return this.state[SEARCH_BOX].getBounds()
   }
 
   /**
@@ -98,7 +99,7 @@ class SearchBox extends React.PureComponent {
    * @public
    */
   getPlaces() {
-    return this.state[_constants.SEARCH_BOX].getPlaces()
+    return this.state[SEARCH_BOX].getPlaces()
   }
 }
 
@@ -106,12 +107,10 @@ export const StandaloneSearchBox = SearchBox
 
 export default StandaloneSearchBox
 
-const eventMap = {
-  onPlacesChanged: "places_changed",
-}
+const eventMap = {}
 
 const updaterMap = {
-  bounds: function bounds(instance, _bounds) {
+  bounds(instance, _bounds) {
     instance.setBounds(_bounds)
   },
 }

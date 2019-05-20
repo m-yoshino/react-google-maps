@@ -13,7 +13,9 @@ import { MAP, KML_LAYER } from "../constants"
 
 export const __jscodeshiftPlaceholder__ = `{
   "eventMapOverrides": {
-    "onDefaultViewportChanged": "defaultviewport_changed"
+    "onDefaultViewportChanged": "defaultviewport_changed",
+    "onClick": "click",
+    "onStatusChanged": "status_changed"
   },
   "getInstanceFromComponent": "this.state[KML_LAYER]"
 }`
@@ -30,32 +32,32 @@ export class KmlLayer extends React.PureComponent {
     /**
      * @type KmlLayerOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type string
      */
-    defaultUrl: _propTypes2.default.string,
+    defaultUrl: PropTypes.string,
 
     /**
      * @type number
      */
-    defaultZIndex: _propTypes2.default.number,
+    defaultZIndex: PropTypes.number,
 
     /**
      * @type KmlLayerOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type string
      */
-    url: _propTypes2.default.string,
+    url: PropTypes.string,
 
     /**
      * @type number
      */
-    zIndex: _propTypes2.default.number,
+    zIndex: PropTypes.number,
   }
 
   static contextTypes = {
@@ -107,7 +109,7 @@ export class KmlLayer extends React.PureComponent {
    * @public
    */
   getDefaultViewport() {
-    return this.state[_constants.KML_LAYER].getDefaultViewport()
+    return this.state[KML_LAYER].getDefaultViewport()
   }
 
   /**
@@ -116,7 +118,7 @@ export class KmlLayer extends React.PureComponent {
    * @public
    */
   getMetadata() {
-    return this.state[_constants.KML_LAYER].getMetadata()
+    return this.state[KML_LAYER].getMetadata()
   }
 
   /**
@@ -125,7 +127,7 @@ export class KmlLayer extends React.PureComponent {
    * @public
    */
   getStatus() {
-    return this.state[_constants.KML_LAYER].getStatus()
+    return this.state[KML_LAYER].getStatus()
   }
 
   /**
@@ -134,7 +136,7 @@ export class KmlLayer extends React.PureComponent {
    * @public
    */
   getUrl() {
-    return this.state[_constants.KML_LAYER].getUrl()
+    return this.state[KML_LAYER].getUrl()
   }
 
   /**
@@ -143,26 +145,24 @@ export class KmlLayer extends React.PureComponent {
    * @public
    */
   getZIndex() {
-    return this.state[_constants.KML_LAYER].getZIndex()
+    return this.state[KML_LAYER].getZIndex()
   }
 }
 
 export default KmlLayer
 
-const eventMap = {
-  onDefaultViewportChanged: "defaultviewport_changed",
-  onClick: "click",
-  onStatusChanged: "status_changed",
-}
+const eventMap = {}
 
 const updaterMap = {
-  options: function options(instance, _options) {
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  url: function url(instance, _url) {
+
+  url(instance, _url) {
     instance.setUrl(_url)
   },
-  zIndex: function zIndex(instance, _zIndex) {
+
+  zIndex(instance, _zIndex) {
     instance.setZIndex(_zIndex)
   },
 }

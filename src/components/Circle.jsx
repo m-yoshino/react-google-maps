@@ -27,62 +27,62 @@ export class Circle extends React.PureComponent {
     /**
      * @type LatLng|LatLngLiteral
      */
-    defaultCenter: _propTypes2.default.any,
+    defaultCenter: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultDraggable: _propTypes2.default.bool,
+    defaultDraggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    defaultEditable: _propTypes2.default.bool,
+    defaultEditable: PropTypes.bool,
 
     /**
      * @type CircleOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type number
      */
-    defaultRadius: _propTypes2.default.number,
+    defaultRadius: PropTypes.number,
 
     /**
      * @type boolean
      */
-    defaultVisible: _propTypes2.default.bool,
+    defaultVisible: PropTypes.bool,
 
     /**
      * @type LatLng|LatLngLiteral
      */
-    center: _propTypes2.default.any,
+    center: PropTypes.any,
 
     /**
      * @type boolean
      */
-    draggable: _propTypes2.default.bool,
+    draggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    editable: _propTypes2.default.bool,
+    editable: PropTypes.bool,
 
     /**
      * @type CircleOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type number
      */
-    radius: _propTypes2.default.number,
+    radius: PropTypes.number,
 
     /**
      * @type boolean
      */
-    visible: _propTypes2.default.bool,
+    visible: PropTypes.bool,
 
     /**
      * function
@@ -128,6 +128,26 @@ export class Circle extends React.PureComponent {
      * function
      */
     onRightClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onCenterChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onDrag: PropTypes.func,
+
+    /**
+     * function
+     */
+    onRadiusChanged: PropTypes.func,
   }
 
   static contextTypes = {
@@ -179,7 +199,7 @@ export class Circle extends React.PureComponent {
    * @public
    */
   getBounds() {
-    return this.state[_constants.CIRCLE].getBounds()
+    return this.state[CIRCLE].getBounds()
   }
 
   /**
@@ -188,7 +208,7 @@ export class Circle extends React.PureComponent {
    * @public
    */
   getCenter() {
-    return this.state[_constants.CIRCLE].getCenter()
+    return this.state[CIRCLE].getCenter()
   }
 
   /**
@@ -197,7 +217,7 @@ export class Circle extends React.PureComponent {
    * @public
    */
   getDraggable() {
-    return this.state[_constants.CIRCLE].getDraggable()
+    return this.state[CIRCLE].getDraggable()
   }
 
   /**
@@ -206,7 +226,7 @@ export class Circle extends React.PureComponent {
    * @public
    */
   getEditable() {
-    return this.state[_constants.CIRCLE].getEditable()
+    return this.state[CIRCLE].getEditable()
   }
 
   /**
@@ -215,7 +235,7 @@ export class Circle extends React.PureComponent {
    * @public
    */
   getRadius() {
-    return this.state[_constants.CIRCLE].getRadius()
+    return this.state[CIRCLE].getRadius()
   }
 
   /**
@@ -224,7 +244,7 @@ export class Circle extends React.PureComponent {
    * @public
    */
   getVisible() {
-    return this.state[_constants.CIRCLE].getVisible()
+    return this.state[CIRCLE].getVisible()
   }
 }
 
@@ -244,34 +264,30 @@ const eventMap = {
   onClick: "click",
   onDrag: "drag",
   onRadiusChanged: "radius_changed",
-  onDblClick: "dblclick",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick",
 }
 
 const updaterMap = {
-  center: function center(instance, _center) {
+  center(instance, _center) {
     instance.setCenter(_center)
   },
-  draggable: function draggable(instance, _draggable) {
+
+  draggable(instance, _draggable) {
     instance.setDraggable(_draggable)
   },
-  editable: function editable(instance, _editable) {
+
+  editable(instance, _editable) {
     instance.setEditable(_editable)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  radius: function radius(instance, _radius) {
+
+  radius(instance, _radius) {
     instance.setRadius(_radius)
   },
-  visible: function visible(instance, _visible) {
+
+  visible(instance, _visible) {
     instance.setVisible(_visible)
   },
 }

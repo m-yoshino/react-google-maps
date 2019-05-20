@@ -27,12 +27,17 @@ export class FusionTablesLayer extends React.PureComponent {
     /**
      * @type FusionTablesLayerOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type FusionTablesLayerOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
+
+    /**
+     * function
+     */
+    onClick: PropTypes.func,
   }
 
   static contextTypes = {
@@ -91,7 +96,7 @@ const eventMap = {
 }
 
 const updaterMap = {
-  options: function options(instance, _options) {
+  options(instance, _options) {
     instance.setOptions(_options)
   },
 }

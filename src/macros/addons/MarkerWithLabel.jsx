@@ -23,7 +23,20 @@ export const __jscodeshiftPlaceholder__ = `{
     "onMouseOut": "mouseout",
     "onMouseOver": "mouseover",
     "onMouseUp": "mouseup",
-    "onRightClick": "rightclick"
+    "onRightClick": "rightclick",
+    "onAnimationChanged": "animation_changed",
+    "onClick": "click",
+    "onClickableChanged": "clickable_changed",
+    "onCursorChanged": "cursor_changed",
+    "onDrag": "drag",
+    "onDraggableChanged": "draggable_changed",
+    "onFlatChanged": "flat_changed",
+    "onIconChanged": "icon_changed",
+    "onPositionChanged": "position_changed",
+    "onShapeChanged": "shape_changed",
+    "onTitleChanged": "title_changed",
+    "onVisibleChanged": "visible_changed",
+    "onZindexChanged": "zindex_changed"
   },
   "getInstanceFromComponent": "this.state[MARKER_WITH_LABEL]"
 }`
@@ -71,142 +84,142 @@ export class MarkerWithLabel extends React.PureComponent {
     /**
      * @type Animation
      */
-    defaultAnimation: _propTypes2.default.any,
+    defaultAnimation: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultClickable: _propTypes2.default.bool,
+    defaultClickable: PropTypes.bool,
 
     /**
      * @type string
      */
-    defaultCursor: _propTypes2.default.string,
+    defaultCursor: PropTypes.string,
 
     /**
      * @type boolean
      */
-    defaultDraggable: _propTypes2.default.bool,
+    defaultDraggable: PropTypes.bool,
 
     /**
      * @type string|Icon|Symbol
      */
-    defaultIcon: _propTypes2.default.any,
+    defaultIcon: PropTypes.any,
 
     /**
      * @type string|MarkerLabel
      */
-    defaultLabel: _propTypes2.default.any,
+    defaultLabel: PropTypes.any,
 
     /**
      * @type number
      */
-    defaultOpacity: _propTypes2.default.number,
+    defaultOpacity: PropTypes.number,
 
     /**
      * @type MarkerOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type MarkerPlace
      */
-    defaultPlace: _propTypes2.default.any,
+    defaultPlace: PropTypes.any,
 
     /**
      * @type LatLng|LatLngLiteral
      */
-    defaultPosition: _propTypes2.default.any,
+    defaultPosition: PropTypes.any,
 
     /**
      * @type MarkerShape
      */
-    defaultShape: _propTypes2.default.any,
+    defaultShape: PropTypes.any,
 
     /**
      * @type string
      */
-    defaultTitle: _propTypes2.default.string,
+    defaultTitle: PropTypes.string,
 
     /**
      * @type boolean
      */
-    defaultVisible: _propTypes2.default.bool,
+    defaultVisible: PropTypes.bool,
 
     /**
      * @type number
      */
-    defaultZIndex: _propTypes2.default.number,
+    defaultZIndex: PropTypes.number,
 
     /**
      * @type Animation
      */
-    animation: _propTypes2.default.any,
+    animation: PropTypes.any,
 
     /**
      * @type boolean
      */
-    clickable: _propTypes2.default.bool,
+    clickable: PropTypes.bool,
 
     /**
      * @type string
      */
-    cursor: _propTypes2.default.string,
+    cursor: PropTypes.string,
 
     /**
      * @type boolean
      */
-    draggable: _propTypes2.default.bool,
+    draggable: PropTypes.bool,
 
     /**
      * @type string|Icon|Symbol
      */
-    icon: _propTypes2.default.any,
+    icon: PropTypes.any,
 
     /**
      * @type string|MarkerLabel
      */
-    label: _propTypes2.default.any,
+    label: PropTypes.any,
 
     /**
      * @type number
      */
-    opacity: _propTypes2.default.number,
+    opacity: PropTypes.number,
 
     /**
      * @type MarkerOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type MarkerPlace
      */
-    place: _propTypes2.default.any,
+    place: PropTypes.any,
 
     /**
      * @type LatLng|LatLngLiteral
      */
-    position: _propTypes2.default.any,
+    position: PropTypes.any,
 
     /**
      * @type MarkerShape
      */
-    shape: _propTypes2.default.any,
+    shape: PropTypes.any,
 
     /**
      * @type string
      */
-    title: _propTypes2.default.string,
+    title: PropTypes.string,
 
     /**
      * @type boolean
      */
-    visible: _propTypes2.default.bool,
+    visible: PropTypes.bool,
 
     /**
      * @type number
      */
-    zIndex: _propTypes2.default.number,
+    zIndex: PropTypes.number,
   }
 
   static defaultProps = {
@@ -295,7 +308,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getAnimation() {
-    return this.state[_constants.MARKER_WITH_LABEL].getAnimation()
+    return this.state[MARKER_WITH_LABEL].getAnimation()
   }
 
   /**
@@ -304,7 +317,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getClickable() {
-    return this.state[_constants.MARKER_WITH_LABEL].getClickable()
+    return this.state[MARKER_WITH_LABEL].getClickable()
   }
 
   /**
@@ -313,7 +326,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getCursor() {
-    return this.state[_constants.MARKER_WITH_LABEL].getCursor()
+    return this.state[MARKER_WITH_LABEL].getCursor()
   }
 
   /**
@@ -322,7 +335,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getDraggable() {
-    return this.state[_constants.MARKER_WITH_LABEL].getDraggable()
+    return this.state[MARKER_WITH_LABEL].getDraggable()
   }
 
   /**
@@ -331,7 +344,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getIcon() {
-    return this.state[_constants.MARKER_WITH_LABEL].getIcon()
+    return this.state[MARKER_WITH_LABEL].getIcon()
   }
 
   /**
@@ -340,7 +353,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getLabel() {
-    return this.state[_constants.MARKER_WITH_LABEL].getLabel()
+    return this.state[MARKER_WITH_LABEL].getLabel()
   }
 
   /**
@@ -349,7 +362,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getOpacity() {
-    return this.state[_constants.MARKER_WITH_LABEL].getOpacity()
+    return this.state[MARKER_WITH_LABEL].getOpacity()
   }
 
   /**
@@ -358,7 +371,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getPlace() {
-    return this.state[_constants.MARKER_WITH_LABEL].getPlace()
+    return this.state[MARKER_WITH_LABEL].getPlace()
   }
 
   /**
@@ -367,7 +380,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getPosition() {
-    return this.state[_constants.MARKER_WITH_LABEL].getPosition()
+    return this.state[MARKER_WITH_LABEL].getPosition()
   }
 
   /**
@@ -376,7 +389,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getShape() {
-    return this.state[_constants.MARKER_WITH_LABEL].getShape()
+    return this.state[MARKER_WITH_LABEL].getShape()
   }
 
   /**
@@ -385,7 +398,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getTitle() {
-    return this.state[_constants.MARKER_WITH_LABEL].getTitle()
+    return this.state[MARKER_WITH_LABEL].getTitle()
   }
 
   /**
@@ -394,7 +407,7 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getVisible() {
-    return this.state[_constants.MARKER_WITH_LABEL].getVisible()
+    return this.state[MARKER_WITH_LABEL].getVisible()
   }
 
   /**
@@ -403,35 +416,13 @@ export class MarkerWithLabel extends React.PureComponent {
    * @public
    */
   getZIndex() {
-    return this.state[_constants.MARKER_WITH_LABEL].getZIndex()
+    return this.state[MARKER_WITH_LABEL].getZIndex()
   }
 }
 
 export default MarkerWithLabel
 
-const eventMap = {
-  onDblClick: "dblclick",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick",
-  onAnimationChanged: "animation_changed",
-  onClick: "click",
-  onClickableChanged: "clickable_changed",
-  onCursorChanged: "cursor_changed",
-  onDrag: "drag",
-  onDraggableChanged: "draggable_changed",
-  onFlatChanged: "flat_changed",
-  onIconChanged: "icon_changed",
-  onPositionChanged: "position_changed",
-  onShapeChanged: "shape_changed",
-  onTitleChanged: "title_changed",
-  onVisibleChanged: "visible_changed",
-  onZindexChanged: "zindex_changed",
-}
+const eventMap = {}
 
 const updaterMap = {
   /**
@@ -462,46 +453,60 @@ const updaterMap = {
   labelVisible(instance, labelVisible) {
     instance.set(`labelVisible`, labelVisible)
   },
-  animation: function animation(instance, _animation) {
+
+  animation(instance, _animation) {
     instance.setAnimation(_animation)
   },
-  clickable: function clickable(instance, _clickable) {
+
+  clickable(instance, _clickable) {
     instance.setClickable(_clickable)
   },
-  cursor: function cursor(instance, _cursor) {
+
+  cursor(instance, _cursor) {
     instance.setCursor(_cursor)
   },
-  draggable: function draggable(instance, _draggable) {
+
+  draggable(instance, _draggable) {
     instance.setDraggable(_draggable)
   },
-  icon: function icon(instance, _icon) {
+
+  icon(instance, _icon) {
     instance.setIcon(_icon)
   },
-  label: function label(instance, _label) {
+
+  label(instance, _label) {
     instance.setLabel(_label)
   },
-  opacity: function opacity(instance, _opacity) {
+
+  opacity(instance, _opacity) {
     instance.setOpacity(_opacity)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  place: function place(instance, _place) {
+
+  place(instance, _place) {
     instance.setPlace(_place)
   },
-  position: function position(instance, _position) {
+
+  position(instance, _position) {
     instance.setPosition(_position)
   },
-  shape: function shape(instance, _shape) {
+
+  shape(instance, _shape) {
     instance.setShape(_shape)
   },
-  title: function title(instance, _title) {
+
+  title(instance, _title) {
     instance.setTitle(_title)
   },
-  visible: function visible(instance, _visible) {
+
+  visible(instance, _visible) {
     instance.setVisible(_visible)
   },
-  zIndex: function zIndex(instance, _zIndex) {
+
+  zIndex(instance, _zIndex) {
     instance.setZIndex(_zIndex)
   },
 }

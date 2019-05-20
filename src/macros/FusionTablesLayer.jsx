@@ -13,6 +13,7 @@ import { MAP, FUSION_TABLES_LAYER } from "../constants"
 
 export const __jscodeshiftPlaceholder__ = `{
   "eventMapOverrides": {
+    "onClick": "click"
   },
   "getInstanceFromComponent": "this.state[FUSION_TABLES_LAYER]"
 }`
@@ -27,12 +28,12 @@ export class FusionTablesLayer extends React.PureComponent {
     /**
      * @type FusionTablesLayerOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type FusionTablesLayerOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     __jscodeshiftPlaceholder__: null,
   }
@@ -88,12 +89,10 @@ export class FusionTablesLayer extends React.PureComponent {
 
 export default FusionTablesLayer
 
-const eventMap = {
-  onClick: "click",
-}
+const eventMap = {}
 
 const updaterMap = {
-  options: function options(instance, _options) {
+  options(instance, _options) {
     instance.setOptions(_options)
   },
 }

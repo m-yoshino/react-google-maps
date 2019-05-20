@@ -30,22 +30,22 @@ export class HeatmapLayer extends React.PureComponent {
     /**
      * @type MVCArray<LatLng|WeightedLocation>|Array<LatLng|WeightedLocation>
      */
-    defaultData: _propTypes2.default.any,
+    defaultData: PropTypes.any,
 
     /**
      * @type HeatmapLayerOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type MVCArray<LatLng|WeightedLocation>|Array<LatLng|WeightedLocation>
      */
-    data: _propTypes2.default.any,
+    data: PropTypes.any,
 
     /**
      * @type HeatmapLayerOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
   }
 
   static contextTypes = {
@@ -101,7 +101,7 @@ export class HeatmapLayer extends React.PureComponent {
    * @public
    */
   getData() {
-    return this.state[_constants.HEATMAP_LAYER].getData()
+    return this.state[HEATMAP_LAYER].getData()
   }
 }
 
@@ -110,10 +110,11 @@ export default HeatmapLayer
 const eventMap = {}
 
 const updaterMap = {
-  data: function data(instance, _data) {
+  data(instance, _data) {
     instance.setData(_data)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
 }

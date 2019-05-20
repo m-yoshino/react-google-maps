@@ -28,22 +28,22 @@ export class DrawingManager extends React.PureComponent {
     /**
      * @type OverlayType
      */
-    defaultDrawingMode: _propTypes2.default.any,
+    defaultDrawingMode: PropTypes.any,
 
     /**
      * @type DrawingManagerOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type OverlayType
      */
-    drawingMode: _propTypes2.default.any,
+    drawingMode: PropTypes.any,
 
     /**
      * @type DrawingManagerOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * function
@@ -129,7 +129,7 @@ export class DrawingManager extends React.PureComponent {
    * @public
    */
   getDrawingMode() {
-    return this.state[_constants.DRAWING_MANAGER].getDrawingMode()
+    return this.state[DRAWING_MANAGER].getDrawingMode()
   }
 }
 
@@ -142,19 +142,14 @@ const eventMap = {
   onPolygonComplete: "polygoncomplete",
   onPolylineComplete: "polylinecomplete",
   onRectangleComplete: "rectanglecomplete",
-  onCircleComplete: "circlecomplete",
-  onMarkerComplete: "markercomplete",
-  onOverlayComplete: "overlaycomplete",
-  onPolygonComplete: "polygoncomplete",
-  onPolylineComplete: "polylinecomplete",
-  onRectangleComplete: "rectanglecomplete",
 }
 
 const updaterMap = {
-  drawingMode: function drawingMode(instance, _drawingMode) {
+  drawingMode(instance, _drawingMode) {
     instance.setDrawingMode(_drawingMode)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
 }

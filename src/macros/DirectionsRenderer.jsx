@@ -13,6 +13,7 @@ import { MAP, DIRECTIONS_RENDERER } from "../constants"
 
 export const __jscodeshiftPlaceholder__ = `{
   "eventMapOverrides": {
+    "onDirectionsChanged": "directions_changed"
   },
   "getInstanceFromComponent": "this.state[DIRECTIONS_RENDERER]"
 }`
@@ -27,42 +28,42 @@ export class DirectionsRenderer extends React.PureComponent {
     /**
      * @type DirectionsResult
      */
-    defaultDirections: _propTypes2.default.any,
+    defaultDirections: PropTypes.any,
 
     /**
      * @type DirectionsRendererOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type Node
      */
-    defaultPanel: _propTypes2.default.any,
+    defaultPanel: PropTypes.any,
 
     /**
      * @type number
      */
-    defaultRouteIndex: _propTypes2.default.number,
+    defaultRouteIndex: PropTypes.number,
 
     /**
      * @type DirectionsResult
      */
-    directions: _propTypes2.default.any,
+    directions: PropTypes.any,
 
     /**
      * @type DirectionsRendererOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type Node
      */
-    panel: _propTypes2.default.any,
+    panel: PropTypes.any,
 
     /**
      * @type number
      */
-    routeIndex: _propTypes2.default.number,
+    routeIndex: PropTypes.number,
 
     __jscodeshiftPlaceholder__: null,
   }
@@ -145,21 +146,22 @@ export class DirectionsRenderer extends React.PureComponent {
 
 export default DirectionsRenderer
 
-const eventMap = {
-  onDirectionsChanged: "directions_changed",
-}
+const eventMap = {}
 
 const updaterMap = {
-  directions: function directions(instance, _directions) {
+  directions(instance, _directions) {
     instance.setDirections(_directions)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  panel: function panel(instance, _panel) {
+
+  panel(instance, _panel) {
     instance.setPanel(_panel)
   },
-  routeIndex: function routeIndex(instance, _routeIndex) {
+
+  routeIndex(instance, _routeIndex) {
     instance.setRouteIndex(_routeIndex)
   },
 }

@@ -27,52 +27,52 @@ export class Rectangle extends React.PureComponent {
     /**
      * @type LatLngBounds|LatLngBoundsLiteral
      */
-    defaultBounds: _propTypes2.default.any,
+    defaultBounds: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultDraggable: _propTypes2.default.bool,
+    defaultDraggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    defaultEditable: _propTypes2.default.bool,
+    defaultEditable: PropTypes.bool,
 
     /**
      * @type RectangleOptions
      */
-    defaultOptions: _propTypes2.default.any,
+    defaultOptions: PropTypes.any,
 
     /**
      * @type boolean
      */
-    defaultVisible: _propTypes2.default.bool,
+    defaultVisible: PropTypes.bool,
 
     /**
      * @type LatLngBounds|LatLngBoundsLiteral
      */
-    bounds: _propTypes2.default.any,
+    bounds: PropTypes.any,
 
     /**
      * @type boolean
      */
-    draggable: _propTypes2.default.bool,
+    draggable: PropTypes.bool,
 
     /**
      * @type boolean
      */
-    editable: _propTypes2.default.bool,
+    editable: PropTypes.bool,
 
     /**
      * @type RectangleOptions
      */
-    options: _propTypes2.default.any,
+    options: PropTypes.any,
 
     /**
      * @type boolean
      */
-    visible: _propTypes2.default.bool,
+    visible: PropTypes.bool,
 
     /**
      * function
@@ -118,6 +118,21 @@ export class Rectangle extends React.PureComponent {
      * function
      */
     onRightClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onBoundsChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onDrag: PropTypes.func,
   }
 
   static contextTypes = {
@@ -169,7 +184,7 @@ export class Rectangle extends React.PureComponent {
    * @public
    */
   getBounds() {
-    return this.state[_constants.RECTANGLE].getBounds()
+    return this.state[RECTANGLE].getBounds()
   }
 
   /**
@@ -178,7 +193,7 @@ export class Rectangle extends React.PureComponent {
    * @public
    */
   getDraggable() {
-    return this.state[_constants.RECTANGLE].getDraggable()
+    return this.state[RECTANGLE].getDraggable()
   }
 
   /**
@@ -187,7 +202,7 @@ export class Rectangle extends React.PureComponent {
    * @public
    */
   getEditable() {
-    return this.state[_constants.RECTANGLE].getEditable()
+    return this.state[RECTANGLE].getEditable()
   }
 
   /**
@@ -196,7 +211,7 @@ export class Rectangle extends React.PureComponent {
    * @public
    */
   getVisible() {
-    return this.state[_constants.RECTANGLE].getVisible()
+    return this.state[RECTANGLE].getVisible()
   }
 }
 
@@ -215,31 +230,26 @@ const eventMap = {
   onBoundsChanged: "bounds_changed",
   onClick: "click",
   onDrag: "drag",
-  onDblClick: "dblclick",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick",
 }
 
 const updaterMap = {
-  bounds: function bounds(instance, _bounds) {
+  bounds(instance, _bounds) {
     instance.setBounds(_bounds)
   },
-  draggable: function draggable(instance, _draggable) {
+
+  draggable(instance, _draggable) {
     instance.setDraggable(_draggable)
   },
-  editable: function editable(instance, _editable) {
+
+  editable(instance, _editable) {
     instance.setEditable(_editable)
   },
-  options: function options(instance, _options) {
+
+  options(instance, _options) {
     instance.setOptions(_options)
   },
-  visible: function visible(instance, _visible) {
+
+  visible(instance, _visible) {
     instance.setVisible(_visible)
   },
 }

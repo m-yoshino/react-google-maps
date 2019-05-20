@@ -14,7 +14,8 @@ import { MAP, GROUND_LAYER } from "../constants"
 
 export const __jscodeshiftPlaceholder__ = `{
   "eventMapOverrides": {
-    "onDblClick": "dblclick"
+    "onDblClick": "dblclick",
+    "onClick": "click"
   },
   "getInstanceFromComponent": "this.state[GROUND_LAYER]"
 }`
@@ -52,12 +53,12 @@ export class GroundOverlay extends React.PureComponent {
     /**
      * @type number
      */
-    defaultOpacity: _propTypes2.default.number,
+    defaultOpacity: PropTypes.number,
 
     /**
      * @type number
      */
-    opacity: _propTypes2.default.number,
+    opacity: PropTypes.number,
   }
 
   static contextTypes = {
@@ -127,7 +128,7 @@ For GroundOveray, url and bounds are passed in to constructor and are immutable
    * @public
    */
   getBounds() {
-    return this.state[_constants.GROUND_LAYER].getBounds()
+    return this.state[GROUND_LAYER].getBounds()
   }
 
   /**
@@ -136,7 +137,7 @@ For GroundOveray, url and bounds are passed in to constructor and are immutable
    * @public
    */
   getOpacity() {
-    return this.state[_constants.GROUND_LAYER].getOpacity()
+    return this.state[GROUND_LAYER].getOpacity()
   }
 
   /**
@@ -145,19 +146,16 @@ For GroundOveray, url and bounds are passed in to constructor and are immutable
    * @public
    */
   getUrl() {
-    return this.state[_constants.GROUND_LAYER].getUrl()
+    return this.state[GROUND_LAYER].getUrl()
   }
 }
 
 export default GroundOverlay
 
-const eventMap = {
-  onDblClick: "dblclick",
-  onClick: "click",
-}
+const eventMap = {}
 
 const updaterMap = {
-  opacity: function opacity(instance, _opacity) {
+  opacity(instance, _opacity) {
     instance.setOpacity(_opacity)
   },
 }
