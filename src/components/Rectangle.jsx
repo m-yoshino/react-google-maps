@@ -25,56 +25,6 @@ import { MAP, RECTANGLE } from "../constants"
 export class Rectangle extends React.PureComponent {
   static propTypes = {
     /**
-     * @type LatLngBounds|LatLngBoundsLiteral
-     */
-    defaultBounds: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    defaultDraggable: PropTypes.bool,
-
-    /**
-     * @type boolean
-     */
-    defaultEditable: PropTypes.bool,
-
-    /**
-     * @type RectangleOptions
-     */
-    defaultOptions: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    defaultVisible: PropTypes.bool,
-
-    /**
-     * @type LatLngBounds|LatLngBoundsLiteral
-     */
-    bounds: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    draggable: PropTypes.bool,
-
-    /**
-     * @type boolean
-     */
-    editable: PropTypes.bool,
-
-    /**
-     * @type RectangleOptions
-     */
-    options: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    visible: PropTypes.bool,
-
-    /**
      * function
      */
     onDblClick: PropTypes.func,
@@ -118,21 +68,6 @@ export class Rectangle extends React.PureComponent {
      * function
      */
     onRightClick: PropTypes.func,
-
-    /**
-     * function
-     */
-    onBoundsChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onClick: PropTypes.func,
-
-    /**
-     * function
-     */
-    onDrag: PropTypes.func,
   }
 
   static contextTypes = {
@@ -177,42 +112,6 @@ export class Rectangle extends React.PureComponent {
   render() {
     return false
   }
-
-  /**
-   * Returns the bounds of this rectangle.
-   * @type LatLngBounds
-   * @public
-   */
-  getBounds() {
-    return this.state[RECTANGLE].getBounds()
-  }
-
-  /**
-   * Returns whether this rectangle can be dragged by the user.
-   * @type boolean
-   * @public
-   */
-  getDraggable() {
-    return this.state[RECTANGLE].getDraggable()
-  }
-
-  /**
-   * Returns whether this rectangle can be edited by the user.
-   * @type boolean
-   * @public
-   */
-  getEditable() {
-    return this.state[RECTANGLE].getEditable()
-  }
-
-  /**
-   * Returns whether this rectangle is visible on the map.
-   * @type boolean
-   * @public
-   */
-  getVisible() {
-    return this.state[RECTANGLE].getVisible()
-  }
 }
 
 export default Rectangle
@@ -227,29 +126,6 @@ const eventMap = {
   onMouseOver: "mouseover",
   onMouseUp: "mouseup",
   onRightClick: "rightclick",
-  onBoundsChanged: "bounds_changed",
-  onClick: "click",
-  onDrag: "drag",
 }
 
-const updaterMap = {
-  bounds(instance, bounds) {
-    instance.setBounds(bounds)
-  },
-
-  draggable(instance, draggable) {
-    instance.setDraggable(draggable)
-  },
-
-  editable(instance, editable) {
-    instance.setEditable(editable)
-  },
-
-  options(instance, options) {
-    instance.setOptions(options)
-  },
-
-  visible(instance, visible) {
-    instance.setVisible(visible)
-  },
-}
+const updaterMap = {}

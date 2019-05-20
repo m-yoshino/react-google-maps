@@ -64,146 +64,6 @@ export class MarkerWithLabel extends React.PureComponent {
     noRedraw: PropTypes.bool,
 
     /**
-     * @type Animation
-     */
-    defaultAnimation: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    defaultClickable: PropTypes.bool,
-
-    /**
-     * @type string
-     */
-    defaultCursor: PropTypes.string,
-
-    /**
-     * @type boolean
-     */
-    defaultDraggable: PropTypes.bool,
-
-    /**
-     * @type string|Icon|Symbol
-     */
-    defaultIcon: PropTypes.any,
-
-    /**
-     * @type string|MarkerLabel
-     */
-    defaultLabel: PropTypes.any,
-
-    /**
-     * @type number
-     */
-    defaultOpacity: PropTypes.number,
-
-    /**
-     * @type MarkerOptions
-     */
-    defaultOptions: PropTypes.any,
-
-    /**
-     * @type MarkerPlace
-     */
-    defaultPlace: PropTypes.any,
-
-    /**
-     * @type LatLng|LatLngLiteral
-     */
-    defaultPosition: PropTypes.any,
-
-    /**
-     * @type MarkerShape
-     */
-    defaultShape: PropTypes.any,
-
-    /**
-     * @type string
-     */
-    defaultTitle: PropTypes.string,
-
-    /**
-     * @type boolean
-     */
-    defaultVisible: PropTypes.bool,
-
-    /**
-     * @type number
-     */
-    defaultZIndex: PropTypes.number,
-
-    /**
-     * @type Animation
-     */
-    animation: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    clickable: PropTypes.bool,
-
-    /**
-     * @type string
-     */
-    cursor: PropTypes.string,
-
-    /**
-     * @type boolean
-     */
-    draggable: PropTypes.bool,
-
-    /**
-     * @type string|Icon|Symbol
-     */
-    icon: PropTypes.any,
-
-    /**
-     * @type string|MarkerLabel
-     */
-    label: PropTypes.any,
-
-    /**
-     * @type number
-     */
-    opacity: PropTypes.number,
-
-    /**
-     * @type MarkerOptions
-     */
-    options: PropTypes.any,
-
-    /**
-     * @type MarkerPlace
-     */
-    place: PropTypes.any,
-
-    /**
-     * @type LatLng|LatLngLiteral
-     */
-    position: PropTypes.any,
-
-    /**
-     * @type MarkerShape
-     */
-    shape: PropTypes.any,
-
-    /**
-     * @type string
-     */
-    title: PropTypes.string,
-
-    /**
-     * @type boolean
-     */
-    visible: PropTypes.bool,
-
-    /**
-     * @type number
-     */
-    zIndex: PropTypes.number,
-
-    /**
      * function
      */
     onDblClick: PropTypes.func,
@@ -242,71 +102,6 @@ export class MarkerWithLabel extends React.PureComponent {
      * function
      */
     onRightClick: PropTypes.func,
-
-    /**
-     * function
-     */
-    onAnimationChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onClick: PropTypes.func,
-
-    /**
-     * function
-     */
-    onClickableChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onCursorChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onDrag: PropTypes.func,
-
-    /**
-     * function
-     */
-    onDraggableChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onFlatChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onIconChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onPositionChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onShapeChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onTitleChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onVisibleChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onZindexChanged: PropTypes.func,
   }
 
   static defaultProps = {
@@ -388,123 +183,6 @@ export class MarkerWithLabel extends React.PureComponent {
   render() {
     return false
   }
-
-  /**
-   *
-   * @type Animation
-   * @public
-   */
-  getAnimation() {
-    return this.state[MARKER_WITH_LABEL].getAnimation()
-  }
-
-  /**
-   *
-   * @type boolean
-   * @public
-   */
-  getClickable() {
-    return this.state[MARKER_WITH_LABEL].getClickable()
-  }
-
-  /**
-   *
-   * @type string
-   * @public
-   */
-  getCursor() {
-    return this.state[MARKER_WITH_LABEL].getCursor()
-  }
-
-  /**
-   *
-   * @type boolean
-   * @public
-   */
-  getDraggable() {
-    return this.state[MARKER_WITH_LABEL].getDraggable()
-  }
-
-  /**
-   *
-   * @type string|Icon|Symbol
-   * @public
-   */
-  getIcon() {
-    return this.state[MARKER_WITH_LABEL].getIcon()
-  }
-
-  /**
-   *
-   * @type MarkerLabel
-   * @public
-   */
-  getLabel() {
-    return this.state[MARKER_WITH_LABEL].getLabel()
-  }
-
-  /**
-   *
-   * @type number
-   * @public
-   */
-  getOpacity() {
-    return this.state[MARKER_WITH_LABEL].getOpacity()
-  }
-
-  /**
-   *
-   * @type MarkerPlace
-   * @public
-   */
-  getPlace() {
-    return this.state[MARKER_WITH_LABEL].getPlace()
-  }
-
-  /**
-   *
-   * @type LatLng
-   * @public
-   */
-  getPosition() {
-    return this.state[MARKER_WITH_LABEL].getPosition()
-  }
-
-  /**
-   *
-   * @type MarkerShape
-   * @public
-   */
-  getShape() {
-    return this.state[MARKER_WITH_LABEL].getShape()
-  }
-
-  /**
-   *
-   * @type string
-   * @public
-   */
-  getTitle() {
-    return this.state[MARKER_WITH_LABEL].getTitle()
-  }
-
-  /**
-   *
-   * @type boolean
-   * @public
-   */
-  getVisible() {
-    return this.state[MARKER_WITH_LABEL].getVisible()
-  }
-
-  /**
-   *
-   * @type number
-   * @public
-   */
-  getZIndex() {
-    return this.state[MARKER_WITH_LABEL].getZIndex()
-  }
 }
 
 export default MarkerWithLabel
@@ -518,19 +196,6 @@ const eventMap = {
   onMouseOver: "mouseover",
   onMouseUp: "mouseup",
   onRightClick: "rightclick",
-  onAnimationChanged: "animation_changed",
-  onClick: "click",
-  onClickableChanged: "clickable_changed",
-  onCursorChanged: "cursor_changed",
-  onDrag: "drag",
-  onDraggableChanged: "draggable_changed",
-  onFlatChanged: "flat_changed",
-  onIconChanged: "icon_changed",
-  onPositionChanged: "position_changed",
-  onShapeChanged: "shape_changed",
-  onTitleChanged: "title_changed",
-  onVisibleChanged: "visible_changed",
-  onZindexChanged: "zindex_changed",
 }
 
 const updaterMap = {
@@ -541,7 +206,6 @@ const updaterMap = {
   labelAnchor(instance, labelAnchor) {
     instance.set(`labelAnchor`, labelAnchor)
   },
-
   /**
    * For `MarkerWithLabel`
    * @see https://cdn.rawgit.com/googlemaps/v3-utility-library/master/markerwithlabel/src/markerwithlabel.js
@@ -549,7 +213,6 @@ const updaterMap = {
   labelClass(instance, labelClass) {
     instance.set(`labelClass`, labelClass)
   },
-
   /**
    * For `MarkerWithLabel`
    * @see https://cdn.rawgit.com/googlemaps/v3-utility-library/master/markerwithlabel/src/markerwithlabel.js
@@ -557,68 +220,11 @@ const updaterMap = {
   labelStyle(instance, labelStyle) {
     instance.set(`labelStyle`, labelStyle)
   },
-
   /**
    * For `MarkerWithLabel`
    * @see https://cdn.rawgit.com/googlemaps/v3-utility-library/master/markerwithlabel/src/markerwithlabel.js
    */
   labelVisible(instance, labelVisible) {
     instance.set(`labelVisible`, labelVisible)
-  },
-
-  animation(instance, animation) {
-    instance.setAnimation(animation)
-  },
-
-  clickable(instance, clickable) {
-    instance.setClickable(clickable)
-  },
-
-  cursor(instance, cursor) {
-    instance.setCursor(cursor)
-  },
-
-  draggable(instance, draggable) {
-    instance.setDraggable(draggable)
-  },
-
-  icon(instance, icon) {
-    instance.setIcon(icon)
-  },
-
-  label(instance, label) {
-    instance.setLabel(label)
-  },
-
-  opacity(instance, opacity) {
-    instance.setOpacity(opacity)
-  },
-
-  options(instance, options) {
-    instance.setOptions(options)
-  },
-
-  place(instance, place) {
-    instance.setPlace(place)
-  },
-
-  position(instance, position) {
-    instance.setPosition(position)
-  },
-
-  shape(instance, shape) {
-    instance.setShape(shape)
-  },
-
-  title(instance, title) {
-    instance.setTitle(title)
-  },
-
-  visible(instance, visible) {
-    instance.setVisible(visible)
-  },
-
-  zIndex(instance, zIndex) {
-    instance.setZIndex(zIndex)
   },
 }

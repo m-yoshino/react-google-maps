@@ -23,17 +23,7 @@ import { MAP, TRAFFIC_LAYER } from "../constants"
  * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#TrafficLayer
  */
 export class TrafficLayer extends React.PureComponent {
-  static propTypes = {
-    /**
-     * @type TrafficLayerOptions
-     */
-    defaultOptions: PropTypes.any,
-
-    /**
-     * @type TrafficLayerOptions
-     */
-    options: PropTypes.any,
-  }
+  static propTypes = {}
 
   static contextTypes = {
     [MAP]: PropTypes.object,
@@ -83,8 +73,4 @@ export default TrafficLayer
 
 const eventMap = {}
 
-const updaterMap = {
-  options(instance, options) {
-    instance.setOptions(options)
-  },
-}
+const updaterMap = {}

@@ -28,36 +28,6 @@ import { MAP, ANCHOR, INFO_WINDOW } from "../constants"
 export class InfoWindow extends React.PureComponent {
   static propTypes = {
     /**
-     * @type InfoWindowOptions
-     */
-    defaultOptions: PropTypes.any,
-
-    /**
-     * @type LatLng|LatLngLiteral
-     */
-    defaultPosition: PropTypes.any,
-
-    /**
-     * @type number
-     */
-    defaultZIndex: PropTypes.number,
-
-    /**
-     * @type InfoWindowOptions
-     */
-    options: PropTypes.any,
-
-    /**
-     * @type LatLng|LatLngLiteral
-     */
-    position: PropTypes.any,
-
-    /**
-     * @type number
-     */
-    zIndex: PropTypes.number,
-
-    /**
      * function
      */
     onCloseClick: PropTypes.func,
@@ -66,21 +36,6 @@ export class InfoWindow extends React.PureComponent {
      * function
      */
     onDomReady: PropTypes.func,
-
-    /**
-     * function
-     */
-    onContentChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onPositionChanged: PropTypes.func,
-
-    /**
-     * function
-     */
-    onZindexChanged: PropTypes.func,
   }
 
   static contextTypes = {
@@ -167,24 +122,6 @@ export class InfoWindow extends React.PureComponent {
     }
     return false
   }
-
-  /**
-   *
-   * @type LatLng
-   * @public
-   */
-  getPosition() {
-    return this.state[INFO_WINDOW].getPosition()
-  }
-
-  /**
-   *
-   * @type number
-   * @public
-   */
-  getZIndex() {
-    return this.state[INFO_WINDOW].getZIndex()
-  }
 }
 
 export default InfoWindow
@@ -205,21 +142,6 @@ const open = (infoWindow, anchor) => {
 const eventMap = {
   onCloseClick: "closeclick",
   onDomReady: "domready",
-  onContentChanged: "content_changed",
-  onPositionChanged: "position_changed",
-  onZindexChanged: "zindex_changed",
 }
 
-const updaterMap = {
-  options(instance, options) {
-    instance.setOptions(options)
-  },
-
-  position(instance, position) {
-    instance.setPosition(position)
-  },
-
-  zIndex(instance, zIndex) {
-    instance.setZIndex(zIndex)
-  },
-}
+const updaterMap = {}

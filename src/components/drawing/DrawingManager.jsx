@@ -26,26 +26,6 @@ import { MAP, DRAWING_MANAGER } from "../../constants"
 export class DrawingManager extends React.PureComponent {
   static propTypes = {
     /**
-     * @type OverlayType
-     */
-    defaultDrawingMode: PropTypes.any,
-
-    /**
-     * @type DrawingManagerOptions
-     */
-    defaultOptions: PropTypes.any,
-
-    /**
-     * @type OverlayType
-     */
-    drawingMode: PropTypes.any,
-
-    /**
-     * @type DrawingManagerOptions
-     */
-    options: PropTypes.any,
-
-    /**
      * function
      */
     onCircleComplete: PropTypes.func,
@@ -122,15 +102,6 @@ export class DrawingManager extends React.PureComponent {
   render() {
     return false
   }
-
-  /**
-   * Returns the `DrawingManager`'s drawing mode.
-   * @type OverlayTypeDrawingManager
-   * @public
-   */
-  getDrawingMode() {
-    return this.state[DRAWING_MANAGER].getDrawingMode()
-  }
 }
 
 export default DrawingManager
@@ -144,12 +115,4 @@ const eventMap = {
   onRectangleComplete: "rectanglecomplete",
 }
 
-const updaterMap = {
-  drawingMode(instance, drawingMode) {
-    instance.setDrawingMode(drawingMode)
-  },
-
-  options(instance, options) {
-    instance.setOptions(options)
-  },
-}
+const updaterMap = {}

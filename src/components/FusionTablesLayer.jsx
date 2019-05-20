@@ -23,22 +23,7 @@ import { MAP, FUSION_TABLES_LAYER } from "../constants"
  * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#FusionTablesLayer
  */
 export class FusionTablesLayer extends React.PureComponent {
-  static propTypes = {
-    /**
-     * @type FusionTablesLayerOptions
-     */
-    defaultOptions: PropTypes.any,
-
-    /**
-     * @type FusionTablesLayerOptions
-     */
-    options: PropTypes.any,
-
-    /**
-     * function
-     */
-    onClick: PropTypes.func,
-  }
+  static propTypes = {}
 
   static contextTypes = {
     [MAP]: PropTypes.object,
@@ -91,12 +76,6 @@ export class FusionTablesLayer extends React.PureComponent {
 
 export default FusionTablesLayer
 
-const eventMap = {
-  onClick: "click",
-}
+const eventMap = {}
 
-const updaterMap = {
-  options(instance, options) {
-    instance.setOptions(options)
-  },
-}
+const updaterMap = {}

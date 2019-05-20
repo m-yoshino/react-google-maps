@@ -25,66 +25,6 @@ import { MAP, POLYGON } from "../constants"
 export class Polygon extends React.PureComponent {
   static propTypes = {
     /**
-     * @type boolean
-     */
-    defaultDraggable: PropTypes.bool,
-
-    /**
-     * @type boolean
-     */
-    defaultEditable: PropTypes.bool,
-
-    /**
-     * @type PolygonOptions
-     */
-    defaultOptions: PropTypes.any,
-
-    /**
-     * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
-     */
-    defaultPath: PropTypes.any,
-
-    /**
-     * @type MVCArray<MVCArray<LatLng>>|MVCArray<LatLng>|Array<Array<LatLng|LatLngLiteral>>|Array<LatLng|LatLngLiteral>
-     */
-    defaultPaths: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    defaultVisible: PropTypes.bool,
-
-    /**
-     * @type boolean
-     */
-    draggable: PropTypes.bool,
-
-    /**
-     * @type boolean
-     */
-    editable: PropTypes.bool,
-
-    /**
-     * @type PolygonOptions
-     */
-    options: PropTypes.any,
-
-    /**
-     * @type MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
-     */
-    path: PropTypes.any,
-
-    /**
-     * @type MVCArray<MVCArray<LatLng>>|MVCArray<LatLng>|Array<Array<LatLng|LatLngLiteral>>|Array<LatLng|LatLngLiteral>
-     */
-    paths: PropTypes.any,
-
-    /**
-     * @type boolean
-     */
-    visible: PropTypes.bool,
-
-    /**
      * function
      */
     onDblClick: PropTypes.func,
@@ -128,16 +68,6 @@ export class Polygon extends React.PureComponent {
      * function
      */
     onRightClick: PropTypes.func,
-
-    /**
-     * function
-     */
-    onClick: PropTypes.func,
-
-    /**
-     * function
-     */
-    onDrag: PropTypes.func,
   }
 
   static contextTypes = {
@@ -182,51 +112,6 @@ export class Polygon extends React.PureComponent {
   render() {
     return false
   }
-
-  /**
-   * Returns whether this shape can be dragged by the user.
-   * @type boolean
-   * @public
-   */
-  getDraggable() {
-    return this.state[POLYGON].getDraggable()
-  }
-
-  /**
-   * Returns whether this shape can be edited by the user.
-   * @type boolean
-   * @public
-   */
-  getEditable() {
-    return this.state[POLYGON].getEditable()
-  }
-
-  /**
-   * Retrieves the first path.
-   * @type MVCArray<LatLng>
-   * @public
-   */
-  getPath() {
-    return this.state[POLYGON].getPath()
-  }
-
-  /**
-   * Retrieves the paths for this polygon.
-   * @type MVCArray<MVCArray<LatLng>>
-   * @public
-   */
-  getPaths() {
-    return this.state[POLYGON].getPaths()
-  }
-
-  /**
-   * Returns whether this poly is visible on the map.
-   * @type boolean
-   * @public
-   */
-  getVisible() {
-    return this.state[POLYGON].getVisible()
-  }
 }
 
 export default Polygon
@@ -241,32 +126,6 @@ const eventMap = {
   onMouseOver: "mouseover",
   onMouseUp: "mouseup",
   onRightClick: "rightclick",
-  onClick: "click",
-  onDrag: "drag",
 }
 
-const updaterMap = {
-  draggable(instance, draggable) {
-    instance.setDraggable(draggable)
-  },
-
-  editable(instance, editable) {
-    instance.setEditable(editable)
-  },
-
-  options(instance, options) {
-    instance.setOptions(options)
-  },
-
-  path(instance, path) {
-    instance.setPath(path)
-  },
-
-  paths(instance, paths) {
-    instance.setPaths(paths)
-  },
-
-  visible(instance, visible) {
-    instance.setVisible(visible)
-  },
-}
+const updaterMap = {}

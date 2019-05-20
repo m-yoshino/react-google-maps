@@ -27,22 +27,7 @@ import { SEARCH_BOX } from "../../constants"
 class SearchBox extends React.PureComponent {
   static displayName = "StandaloneSearchBox"
 
-  static propTypes = {
-    /**
-     * @type LatLngBounds|LatLngBoundsLiteral
-     */
-    defaultBounds: PropTypes.any,
-
-    /**
-     * @type LatLngBounds|LatLngBoundsLiteral
-     */
-    bounds: PropTypes.any,
-
-    /**
-     * function
-     */
-    onPlacesChanged: PropTypes.func,
-  }
+  static propTypes = {}
 
   state = {
     [SEARCH_BOX]: null,
@@ -85,36 +70,12 @@ class SearchBox extends React.PureComponent {
   render() {
     return React.Children.only(this.props.children)
   }
-
-  /**
-   * Returns the bounds to which query predictions are biased.
-   * @type LatLngBounds
-   * @public
-   */
-  getBounds() {
-    return this.state[SEARCH_BOX].getBounds()
-  }
-
-  /**
-   * Returns the query selected by the user, or `null` if no places have been found yet, to be used with `places_changed` event.
-   * @type Array<PlaceResult>nullplaces_changed
-   * @public
-   */
-  getPlaces() {
-    return this.state[SEARCH_BOX].getPlaces()
-  }
 }
 
 export const StandaloneSearchBox = SearchBox
 
 export default StandaloneSearchBox
 
-const eventMap = {
-  onPlacesChanged: "places_changed",
-}
+const eventMap = {}
 
-const updaterMap = {
-  bounds(instance, bounds) {
-    instance.setBounds(bounds)
-  },
-}
+const updaterMap = {}
