@@ -84,9 +84,7 @@ export class OverlayView extends React.PureComponent {
   onAdd() {
     this.containerElement = document.createElement(`div`)
     this.containerElement.style.position = `absolute`
-  }
 
-  draw() {
     const { mapPaneName } = this.props
     invariant(
       !!mapPaneName,
@@ -97,15 +95,18 @@ export class OverlayView extends React.PureComponent {
     const mapPanes = this.state[OVERLAY_VIEW].getPanes()
     mapPanes[mapPaneName].appendChild(this.containerElement)
 
-    ReactDOM.unstable_renderSubtreeIntoContainer(
-      this,
-      React.Children.only(this.props.children),
-      this.containerElement,
-      this.onPositionElement
-    )
+    this.onPositionElement()
+    this.forceUpdate()
+  }
+
+  draw() {
+    this.onPositionElement()
   }
 
   onPositionElement() {
+    if (typeof this.containerElement === "undefined") {
+      return
+    }
     // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapCanvasProjection
     const mapCanvasProjection = this.state[OVERLAY_VIEW].getProjection()
 
@@ -124,7 +125,6 @@ export class OverlayView extends React.PureComponent {
 
   onRemove() {
     this.containerElement.parentNode.removeChild(this.containerElement)
-    ReactDOM.unmountComponentAtNode(this.containerElement)
     this.containerElement = null
   }
 
@@ -140,7 +140,7 @@ export class OverlayView extends React.PureComponent {
       updaterMap,
       prevProps
     )
-    _.delay(this.state[OVERLAY_VIEW].draw)
+    this.onPositionElement()
   }
 
   componentWillUnmount() {
@@ -156,7 +156,31 @@ export class OverlayView extends React.PureComponent {
   }
 
   render() {
-    return false
+    if (typeof this.containerElement === "undefined") {
+      return null
+    }
+    return ReactDOM.createPortal(
+      React.Children.only(this.props.children),
+      this.containerElement
+    )
+  }
+
+  /**
+   * Returns the panes in which this OverlayView can be rendered. The panes are not initialized until `onAdd` is called by the API.
+   * @type MapPanesonAdd
+   * @public
+   */
+  getPanes() {
+    return this.state[OVERLAY_VIEW].getPanes()
+  }
+
+  /**
+   * Returns the `MapCanvasProjection` object associated with this `OverlayView`. The projection is not initialized until `onAdd` is called by the API.
+   * @type MapCanvasProjectionMapCanvasProjectionOverlayViewonAdd
+   * @public
+   */
+  getProjection() {
+    return this.state[OVERLAY_VIEW].getProjection()
   }
 }
 
