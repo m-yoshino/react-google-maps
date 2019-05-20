@@ -165,7 +165,7 @@ const eventMap = {
 }
 
 const updaterMap = {
-  opacity(instance, _opacity) {
-    instance.setOpacity(_opacity)
+  opacity(instance, opacity) {
+    instance.setOpacity(opacity)
   },
 }

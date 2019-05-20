@@ -116,11 +116,11 @@ export default DrawingManager
 const eventMap = {}
 
 const updaterMap = {
-  drawingMode(instance, _drawingMode) {
-    instance.setDrawingMode(_drawingMode)
+  drawingMode(instance, drawingMode) {
+    instance.setDrawingMode(drawingMode)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 }

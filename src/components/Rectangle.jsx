@@ -233,23 +233,23 @@ const eventMap = {
 }
 
 const updaterMap = {
-  bounds(instance, _bounds) {
-    instance.setBounds(_bounds)
+  bounds(instance, bounds) {
+    instance.setBounds(bounds)
   },
 
-  draggable(instance, _draggable) {
-    instance.setDraggable(_draggable)
+  draggable(instance, draggable) {
+    instance.setDraggable(draggable)
   },
 
-  editable(instance, _editable) {
-    instance.setEditable(_editable)
+  editable(instance, editable) {
+    instance.setEditable(editable)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  visible(instance, _visible) {
-    instance.setVisible(_visible)
+  visible(instance, visible) {
+    instance.setVisible(visible)
   },
 }

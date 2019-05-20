@@ -108,11 +108,11 @@ export default HeatmapLayer
 const eventMap = {}
 
 const updaterMap = {
-  data(instance, _data) {
-    instance.setData(_data)
+  data(instance, data) {
+    instance.setData(data)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 }

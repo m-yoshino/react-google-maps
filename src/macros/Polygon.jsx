@@ -192,27 +192,27 @@ export default Polygon
 const eventMap = {}
 
 const updaterMap = {
-  draggable(instance, _draggable) {
-    instance.setDraggable(_draggable)
+  draggable(instance, draggable) {
+    instance.setDraggable(draggable)
   },
 
-  editable(instance, _editable) {
-    instance.setEditable(_editable)
+  editable(instance, editable) {
+    instance.setEditable(editable)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  path(instance, _path) {
-    instance.setPath(_path)
+  path(instance, path) {
+    instance.setPath(path)
   },
 
-  paths(instance, _paths) {
-    instance.setPaths(_paths)
+  paths(instance, paths) {
+    instance.setPaths(paths)
   },
 
-  visible(instance, _visible) {
-    instance.setVisible(_visible)
+  visible(instance, visible) {
+    instance.setVisible(visible)
   },
 }

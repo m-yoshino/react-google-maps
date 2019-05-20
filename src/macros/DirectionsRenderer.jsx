@@ -122,7 +122,7 @@ export class DirectionsRenderer extends React.PureComponent {
    * @public
    */
   getDirections() {
-    return this.state[_constants.DIRECTIONS_RENDERER].getDirections()
+    return this.state[DIRECTIONS_RENDERER].getDirections()
   }
 
   /**
@@ -131,7 +131,7 @@ export class DirectionsRenderer extends React.PureComponent {
    * @public
    */
   getPanel() {
-    return this.state[_constants.DIRECTIONS_RENDERER].getPanel()
+    return this.state[DIRECTIONS_RENDERER].getPanel()
   }
 
   /**
@@ -140,7 +140,7 @@ export class DirectionsRenderer extends React.PureComponent {
    * @public
    */
   getRouteIndex() {
-    return this.state[_constants.DIRECTIONS_RENDERER].getRouteIndex()
+    return this.state[DIRECTIONS_RENDERER].getRouteIndex()
   }
 }
 
@@ -149,19 +149,19 @@ export default DirectionsRenderer
 const eventMap = {}
 
 const updaterMap = {
-  directions(instance, _directions) {
-    instance.setDirections(_directions)
+  directions(instance, directions) {
+    instance.setDirections(directions)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  panel(instance, _panel) {
-    instance.setPanel(_panel)
+  panel(instance, panel) {
+    instance.setPanel(panel)
   },
 
-  routeIndex(instance, _routeIndex) {
-    instance.setRouteIndex(_routeIndex)
+  routeIndex(instance, routeIndex) {
+    instance.setRouteIndex(routeIndex)
   },
 }

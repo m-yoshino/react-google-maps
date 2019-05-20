@@ -92,7 +92,7 @@ export default FusionTablesLayer
 const eventMap = {}
 
 const updaterMap = {
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 }

@@ -114,7 +114,7 @@ const eventMap = {
 }
 
 const updaterMap = {
-  bounds(instance, _bounds) {
-    instance.setBounds(_bounds)
+  bounds(instance, bounds) {
+    instance.setBounds(bounds)
   },
 }

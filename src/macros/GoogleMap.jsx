@@ -285,6 +285,15 @@ export const GoogleMap = Map
 export default Map
 
 const eventMap = {
+  onDblClick: "dblclick",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMapTypeIdChanged: "maptypeid_changed",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onRightClick: "rightclick",
+  onTilesLoaded: "tilesloaded",
   onBoundsChanged: "bounds_changed",
   onCenterChanged: "center_changed",
   onClick: "click",
@@ -302,35 +311,35 @@ const updaterMap = {
     extra.forEach(it => instance.mapTypes.set(...it))
   },
 
-  center(instance, _center) {
-    instance.setCenter(_center)
+  center(instance, center) {
+    instance.setCenter(center)
   },
 
-  clickableIcons(instance, _clickableIcons) {
-    instance.setClickableIcons(_clickableIcons)
+  clickableIcons(instance, clickableIcons) {
+    instance.setClickableIcons(clickableIcons)
   },
 
-  heading(instance, _heading) {
-    instance.setHeading(_heading)
+  heading(instance, heading) {
+    instance.setHeading(heading)
   },
 
-  mapTypeId(instance, _mapTypeId) {
-    instance.setMapTypeId(_mapTypeId)
+  mapTypeId(instance, mapTypeId) {
+    instance.setMapTypeId(mapTypeId)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  streetView(instance, _streetView) {
-    instance.setStreetView(_streetView)
+  streetView(instance, streetView) {
+    instance.setStreetView(streetView)
   },
 
-  tilt(instance, _tilt) {
-    instance.setTilt(_tilt)
+  tilt(instance, tilt) {
+    instance.setTilt(tilt)
   },
 
-  zoom(instance, _zoom) {
-    instance.setZoom(_zoom)
+  zoom(instance, zoom) {
+    instance.setZoom(zoom)
   },
 }

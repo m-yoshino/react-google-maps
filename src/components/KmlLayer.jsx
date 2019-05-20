@@ -168,15 +168,15 @@ const eventMap = {
 }
 
 const updaterMap = {
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  url(instance, _url) {
-    instance.setUrl(_url)
+  url(instance, url) {
+    instance.setUrl(url)
   },
 
-  zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex)
+  zIndex(instance, zIndex) {
+    instance.setZIndex(zIndex)
   },
 }

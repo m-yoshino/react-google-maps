@@ -203,27 +203,27 @@ export default Circle
 const eventMap = {}
 
 const updaterMap = {
-  center(instance, _center) {
-    instance.setCenter(_center)
+  center(instance, center) {
+    instance.setCenter(center)
   },
 
-  draggable(instance, _draggable) {
-    instance.setDraggable(_draggable)
+  draggable(instance, draggable) {
+    instance.setDraggable(draggable)
   },
 
-  editable(instance, _editable) {
-    instance.setEditable(_editable)
+  editable(instance, editable) {
+    instance.setEditable(editable)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  radius(instance, _radius) {
-    instance.setRadius(_radius)
+  radius(instance, radius) {
+    instance.setRadius(radius)
   },
 
-  visible(instance, _visible) {
-    instance.setVisible(_visible)
+  visible(instance, visible) {
+    instance.setVisible(visible)
   },
 }

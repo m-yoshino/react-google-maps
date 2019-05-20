@@ -266,35 +266,35 @@ export default StreetViewPanorama
 const eventMap = {}
 
 const updaterMap = {
-  links(instance, _links) {
-    instance.setLinks(_links)
+  links(instance, links) {
+    instance.setLinks(links)
   },
 
-  motionTracking(instance, _motionTracking) {
-    instance.setMotionTracking(_motionTracking)
+  motionTracking(instance, motionTracking) {
+    instance.setMotionTracking(motionTracking)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  pano(instance, _pano) {
-    instance.setPano(_pano)
+  pano(instance, pano) {
+    instance.setPano(pano)
   },
 
-  position(instance, _position) {
-    instance.setPosition(_position)
+  position(instance, position) {
+    instance.setPosition(position)
   },
 
-  pov(instance, _pov) {
-    instance.setPov(_pov)
+  pov(instance, pov) {
+    instance.setPov(pov)
   },
 
-  visible(instance, _visible) {
-    instance.setVisible(_visible)
+  visible(instance, visible) {
+    instance.setVisible(visible)
   },
 
-  zoom(instance, _zoom) {
-    instance.setZoom(_zoom)
+  zoom(instance, zoom) {
+    instance.setZoom(zoom)
   },
 }

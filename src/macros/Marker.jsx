@@ -380,59 +380,59 @@ export default Marker
 const eventMap = {}
 
 const updaterMap = {
-  animation(instance, _animation) {
-    instance.setAnimation(_animation)
+  animation(instance, animation) {
+    instance.setAnimation(animation)
   },
 
-  clickable(instance, _clickable) {
-    instance.setClickable(_clickable)
+  clickable(instance, clickable) {
+    instance.setClickable(clickable)
   },
 
-  cursor(instance, _cursor) {
-    instance.setCursor(_cursor)
+  cursor(instance, cursor) {
+    instance.setCursor(cursor)
   },
 
-  draggable(instance, _draggable) {
-    instance.setDraggable(_draggable)
+  draggable(instance, draggable) {
+    instance.setDraggable(draggable)
   },
 
-  icon(instance, _icon) {
-    instance.setIcon(_icon)
+  icon(instance, icon) {
+    instance.setIcon(icon)
   },
 
-  label(instance, _label) {
-    instance.setLabel(_label)
+  label(instance, label) {
+    instance.setLabel(label)
   },
 
-  opacity(instance, _opacity) {
-    instance.setOpacity(_opacity)
+  opacity(instance, opacity) {
+    instance.setOpacity(opacity)
   },
 
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  place(instance, _place) {
-    instance.setPlace(_place)
+  place(instance, place) {
+    instance.setPlace(place)
   },
 
-  position(instance, _position) {
-    instance.setPosition(_position)
+  position(instance, position) {
+    instance.setPosition(position)
   },
 
-  shape(instance, _shape) {
-    instance.setShape(_shape)
+  shape(instance, shape) {
+    instance.setShape(shape)
   },
 
-  title(instance, _title) {
-    instance.setTitle(_title)
+  title(instance, title) {
+    instance.setTitle(title)
   },
 
-  visible(instance, _visible) {
-    instance.setVisible(_visible)
+  visible(instance, visible) {
+    instance.setVisible(visible)
   },
 
-  zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex)
+  zIndex(instance, zIndex) {
+    instance.setZIndex(zIndex)
   },
 }

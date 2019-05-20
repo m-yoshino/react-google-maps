@@ -211,15 +211,15 @@ const eventMap = {
 }
 
 const updaterMap = {
-  options(instance, _options) {
-    instance.setOptions(_options)
+  options(instance, options) {
+    instance.setOptions(options)
   },
 
-  position(instance, _position) {
-    instance.setPosition(_position)
+  position(instance, position) {
+    instance.setPosition(position)
   },
 
-  zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex)
+  zIndex(instance, zIndex) {
+    instance.setZIndex(zIndex)
   },
 }
