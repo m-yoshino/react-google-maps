@@ -21,7 +21,17 @@ export const __jscodeshiftPlaceholder__ = `{
     "onMouseOut": "mouseout",
     "onMouseOver": "mouseover",
     "onRightClick": "rightclick",
-    "onTilesLoaded": "tilesloaded"
+    "onTilesLoaded": "tilesloaded",
+    "onBoundsChanged": "bounds_changed",
+    "onCenterChanged": "center_changed",
+    "onClick": "click",
+    "onDrag": "drag",
+    "onHeadingChanged": "heading_changed",
+    "onIdle": "idle",
+    "onProjectionChanged": "projection_changed",
+    "onResize": "resize",
+    "onTiltChanged": "tilt_changed",
+    "onZoomChanged": "zoom_changed"
   },
   "getInstanceFromComponent": "this.context[MAP]"
 }`

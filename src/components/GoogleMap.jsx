@@ -156,6 +156,56 @@ export class Map extends React.PureComponent {
      * function
      */
     onTilesLoaded: PropTypes.func,
+
+    /**
+     * function
+     */
+    onBoundsChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onCenterChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onClick: PropTypes.func,
+
+    /**
+     * function
+     */
+    onDrag: PropTypes.func,
+
+    /**
+     * function
+     */
+    onHeadingChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onIdle: PropTypes.func,
+
+    /**
+     * function
+     */
+    onProjectionChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onResize: PropTypes.func,
+
+    /**
+     * function
+     */
+    onTiltChanged: PropTypes.func,
+
+    /**
+     * function
+     */
+    onZoomChanged: PropTypes.func,
   }
 
   static contextTypes = {
@@ -347,6 +397,16 @@ const eventMap = {
   onMouseOver: "mouseover",
   onRightClick: "rightclick",
   onTilesLoaded: "tilesloaded",
+  onBoundsChanged: "bounds_changed",
+  onCenterChanged: "center_changed",
+  onClick: "click",
+  onDrag: "drag",
+  onHeadingChanged: "heading_changed",
+  onIdle: "idle",
+  onProjectionChanged: "projection_changed",
+  onResize: "resize",
+  onTiltChanged: "tilt_changed",
+  onZoomChanged: "zoom_changed",
 }
 
 const updaterMap = {
