@@ -443,6 +443,9 @@ declare module 'react-google-maps/lib/components/OverlayView' {
         static OVERLAY_LAYER: string
         static OVERLAY_MOUSE_TARGET: string
 
+        static preventMapHitsAndGesturesFrom(element: Element): void;
+        static preventMapHitsFrom(element: Element): void;
+
         getPanes(): google.maps.MapPanes
         getProjection(): google.maps.MapCanvasProjection
     }
