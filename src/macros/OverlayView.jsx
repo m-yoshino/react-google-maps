@@ -110,6 +110,14 @@ export class OverlayView extends React.PureComponent {
     // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapCanvasProjection
     const mapCanvasProjection = this.state[OVERLAY_VIEW].getProjection()
 
+    if (typeof mapCanvasProjection === "undefined") {
+      return
+    }
+
+    if (!this.props.bounds && !this.props.position) {
+      return
+    }
+
     const offset = {
       x: 0,
       y: 0,
