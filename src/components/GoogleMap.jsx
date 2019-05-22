@@ -362,6 +362,15 @@ export class Map extends React.PureComponent {
   getZoom() {
     return this.context[MAP].getZoom()
   }
+
+  /**
+   *
+   * @type number
+   * @public
+   */
+  getMaxZoom(mapTypeId) {
+    return this.context[MAP].mapTypes[mapTypeId].maxZoom
+  }
 }
 
 export const GoogleMap = Map
