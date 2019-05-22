@@ -272,6 +272,7 @@ declare module 'react-google-maps/lib/components/GoogleMap' {
         getStreetView(): google.maps.StreetViewPanorama
         getTilt(): number
         getZoom(): number
+        getMaxZoom(mapTypeId: google.maps.MapTypeId): number
     }
 }
 
